@@ -32,6 +32,15 @@ git co -b cxy 新建一个cxy分支并直接切换到那个分支
 
 只有在某个分支中push后，分支才会上传到远端
 
+<<<<<<< HEAD
+=======
+git branch --set-upstream-to=origin/master master
+git pull
+每天更新最新的项目进度时，需要进入本地的master 并git pull拉下来最新的代码。
+之后进入自己的分支,git merge master即可
+如果Git pull出错时，则需要将本地的master和远程的origin master做连接 ：git branch --set-upstream-to=origin/master master，之后就可以正常pull了
+
+>>>>>>> remotes/origin/cxy
 ### 回滚
 git log 查看可以回滚的目录 
 
