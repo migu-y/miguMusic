@@ -1,4 +1,4 @@
-# migu-music
+# mvp
 
 ## Project setup
 ```
