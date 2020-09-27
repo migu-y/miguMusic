@@ -46,6 +46,12 @@ const routes = [{
             component: () =>
                 import ( /*webpackChunkName:"profile"*/ '@v/profile/Profile.vue')
         },
+        {
+            path: "shopbagdialog",
+            name: "shopbagdialog",
+            component: () =>
+                import ( /*webpackChunkName:"shopbagdialog"*/ '@c/ShopBagDialog.vue')
+        },
     ]
 }]
 

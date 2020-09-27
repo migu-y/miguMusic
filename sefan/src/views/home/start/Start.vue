@@ -8,7 +8,7 @@
         <main>
             <div class="start-top">
                 <ul>
-                    <li>
+                    <li @click="handleOrderClick">
                         <i class="iconfont icon-icon-"></i>
                         <span>门店自取</span>
                         <p>下单免排队</p>
@@ -22,7 +22,7 @@
             </div>
             <div class="start-mid">
                 <ul>
-                    <li>
+                    <li @click="handleClick">
                         <i class="iconfont icon-libao1"> 喜茶百货</i>
                         <span>气泡水新升级抢鲜选购</span>
                     </li>
@@ -72,6 +72,14 @@ export default {
       type: Array
     }
   },
+  methods:{
+      handleClick(){
+          this.$router.push("/variety")
+      },
+      handleOrderClick(){
+          this.$router.push("/reservation")
+      }
+  }
 };
 </script>
 

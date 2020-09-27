@@ -1,5 +1,7 @@
 <template>
+    <div class="container">
 
+    </div>
    
 </template>
 
@@ -11,5 +13,7 @@ export default {
 
 
 <style scoped lang="stylus">
-
+.container
+    height 100%
+    
 </style>

@@ -14,5 +14,6 @@ export default {
 <style lang="stylus" scoped>
 .container {
   height: 100%;
+  overflow-y scroll
 }
 </style>
