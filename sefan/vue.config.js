@@ -21,6 +21,10 @@ module.exports = {
                 pathRewrite: {
                     '^/data': '' // /api/mmdb/movie/v2/list/hot.json -> /mmdb/movie/v2/list/hot.json
                 }
+            },
+            "/list": {
+                target: "http://localhost:9000",
+                changeOrigin: true,
             }
         }
     },

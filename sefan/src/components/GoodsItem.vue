@@ -1,21 +1,25 @@
 <template>
   <div class="wrap">
       <div class="logoImg">
-          <img src="@a/item.jpg" alt="">
+          <img :src="goods.thumbnail" alt="">
       </div>
       <div class="descGoods">
-          <p>【葡萄味】 喜小茶小茶</p>
-          <p>130人已购买</p>
+          <p>{{goods.name}}</p>
+          <p>{{goods.itemSalesVolume}}人已购买</p>
       </div>
       <ul>
-          <li>¥66.00</li>
+          <li>¥ {{(goods.salePrice/100).toFixed(2)}}</li>
           <li>+</li>
       </ul>
   </div>
 </template>
 
 <script>
-export default {};
+
+export default {
+    props:["goods"]
+    
+};
 </script>
 
 <style scoped lang="stylus">
@@ -50,19 +54,20 @@ export default {};
         display flex
         flex 1
         justify-content space-between
-        padding-left 0.16rem
+        padding 0 0.06rem 0.04rem 0.16rem
         margin-top .1rem
         li:first-child 
             color #d3aa79 
             font-size 0.18rem
         li:last-child 
-            width 0.3rem
-            height 0.3rem
-            line-height 0.28rem
+            width 0.25rem
+            height 0.25rem
+            line-height 0.25rem
             text-align center
             font-size .15rem
             background-color #d3aa79
             color #ffffff
             border-radius 0.3rem
+            
         
 </style>
