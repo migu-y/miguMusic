@@ -1,11 +1,19 @@
 <template>
-  <clickShopping></clickShopping>
+<div class="container">
+    <water-shopping></water-shopping>
+</div>
 </template>
 <script>
-import clickShopping from './views/picture/clickShopping'
+
+import WaterShopping from "@v/waterShop/waterShopping.vue"
 export default {
-  components:{
-    clickShopping
-  }
+    components:{
+        WaterShopping
+    }
 }
 </script>
+<style lang="stylus" scoped>
+.container
+    height 100%
+    
+</style>
