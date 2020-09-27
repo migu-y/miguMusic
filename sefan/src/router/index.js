@@ -1,19 +1,32 @@
-import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-// const routes = [
-//   {
-    
-//   },
-  
-//]
+import Vue from "vue"
+Vue.use(VueRouter)
+
+import watershopping from "@v/waterShop/waterShopping.vue"
+
+const routes = [{
+    path: "/",
+    name: "watershopping",
+    component: watershopping,
+     redirect: "/waterShop/shopInfor",
+    children: [
+        {
+            path:"/waterShop/shopInfor",
+            name:"/waterShop/shopInfor",
+            component:()=>
+                import(/*webpackChunkName:"shopinfor"*/ '@v/waterShop/shopInfor.vue')
+        },
+        
+    ]
+}]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-
+    mode: "history",
+    routes
 })
 
 export default router
+

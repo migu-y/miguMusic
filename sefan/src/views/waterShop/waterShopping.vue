@@ -15,10 +15,13 @@
                       <p>【混合装】喜小茶零糖气泡水</p>
                       <p>规格为12瓶一箱哦</p>
                       <span>￥66.00</span>
-                      <div>立即购买</div>
+                      <router-link tag="li" active-class="active" to="/waterShop/shopInfor">
+                        <div>立即购买</div>
+                    </router-link>
                   </div>
               </li>
           </ul>
+          <router-view></router-view>
       </main>
 
   </div>
@@ -53,18 +56,28 @@ export default {
             div:nth-child(2)
                 p:nth-of-type(1)
                     font-size .16rem
-                    font-weight bold
+                    margin-top .10rem
                 p:nth-of-type(2)
                     font-size .12rem
                     color #666
+                    margin-top .02rem
                 span 
                     font-size .14rem
                     font-weight  bold
-
-
-
+                    margin-top .16rem
+                    display block
+                div
+                    height .25rem
+                    width  .7rem
+                    background #daa778
+                    border-radius .06rem
+                    color #fff
+                    font-size .10rem
+                    text-align center        //居中对齐
+                    line-height .25rem 
+                    margin-top .13rem
         .banner 
-             height .250rem
+             height .25rem
     
 
 </style>
