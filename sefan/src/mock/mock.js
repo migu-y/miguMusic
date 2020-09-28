@@ -1,6 +1,6 @@
-const data = require("./data.json")
-module.exports = function(){
+const list = require("./list.json")
+module.exports = function() {
     return {
-        data
+        list
     }
 }

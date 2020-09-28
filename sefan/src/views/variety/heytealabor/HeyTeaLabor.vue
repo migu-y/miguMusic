@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <header>
-      <div @click="handleCityClick">箭头</div>
+      <div @click="handleCityClick"><i class="iconfont icon-back"></i></div>
       喜茶实验室
     </header>
     <div class="banner">
@@ -18,35 +18,19 @@
             <li>销量</li>
             <li>价格</li>
           </ul>
-          <div class="toggle">图标</div>
+          <div class="toggle"><i class="iconfont icon-list"></i></div>
       </div>
     </nav>
     <div class="main">
       <ul class="list">
-            <li>
-                <goods-item></goods-item>
+            <li v-for="goods in goodsList" :key="goods.id">
+                <van-cell is-link @click="showPopup">
+                    <goods-item :goods="goods"></goods-item>
+                </van-cell>
+                <van-popup v-model="show">
+                    <goods-detail :goods="goods"></goods-detail>
+                </van-popup>
             </li>
-             <li>
-                <goods-item></goods-item>
-            </li>  
-            <li>
-                <goods-item></goods-item>
-            </li>
-             <li>
-                <goods-item></goods-item>
-            </li>
-            <li>
-                <goods-item></goods-item>
-            </li>
-             <li>
-                <goods-item></goods-item>
-            </li>  
-            <li>
-                <goods-item></goods-item>
-            </li>
-             <li>
-                <goods-item></goods-item>
-            </li>    
       </ul>
     </div>
   </div>
@@ -55,18 +39,36 @@
 <script>
 import http from '@u/http'
 import GoodsItem from "@c/GoodsItem.vue";
+import GoodsDetail from "@c/GoodsDetails.vue"
 
+import Vue from 'vue';
+import { Popup,Cell } from 'vant';
+
+Vue.use(Popup);
+Vue.use(Cell);
 export default {
+  data(){
+        return {
+            goodsList:[],
+            show:false
+        }
+    },
+    async mounted(){
+        let result =await http.get("/list");
+        console.log(result)
+        this.goodsList = result.data
+    },
   components: {
     GoodsItem,
-  },
-  async mounted(){
-    let result = http.get("")
+    GoodsDetail
   },
   methods:{
       handleCityClick() {
       this.$router.push('/variety')
-    }
+    },
+    showPopup() {
+      this.show = true;
+    },
   }
 };
 </script>
@@ -77,7 +79,6 @@ export default {
     height 100%
     display flex
     flex-direction column
-    overflow-y scroll
     header 
         height 0.44rem
         background #ffffff
@@ -135,14 +136,18 @@ export default {
             display flex
             flex-wrap wrap
             li 
-                height 2.4rem
                 margin-bottom .1rem
                 border-radius .1rem
                 background-color #ffffff
             li:nth-child(2n+1)
                     margin-right .15rem
-                    
-
-  
-
+</style>
+<style lang="css">
+.van-cell{
+  padding: 0;
+  overflow: visible;
+}
+.van-cell .van-icon{
+  display:none
+}
 </style>

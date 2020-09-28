@@ -11,9 +11,10 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.container
-    height 100%
-    
+.container {
+  height: 100%;
+  overflow-y scroll
+}
 </style>
 
 

@@ -19,7 +19,16 @@ const routes = [{
             component:()=>
                 import(/*webpackChunkName:"shopinfor"*/ '@v/waterShop/shopInfor.vue')
         },
+<<<<<<< HEAD
         
+=======
+        {
+            path: "shopbagdialog",
+            name: "shopbagdialog",
+            component: () =>
+                import ( /*webpackChunkName:"shopbagdialog"*/ '@c/ShopBagDialog.vue')
+        },
+>>>>>>> master
     ]
 }]
 

@@ -1,10 +1,13 @@
 <template>
-  <div>reservation</div>
+  <div>
+   点单
+  </div>
 </template>
 
 <script>
-export default {
 
+export default {
+  
 }
 </script>
 
