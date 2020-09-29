@@ -35,7 +35,7 @@
                 
               </div>
               <div class="r-bottom">
-                <router-link to="/Goods/surrounds">
+                <router-link to="/variety/soularound">
                 <img src="../../../public/img/linggan.png" alt="">
                 </router-link>
                 

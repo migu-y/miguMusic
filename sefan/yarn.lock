@@ -1116,7 +1116,7 @@
 
 "@vant/icons@1.3.0":
   version "1.3.0"
-  resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.3.0.tgz?cache=0&sync_timestamp=1599114567909&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Ficons%2Fdownload%2F%40vant%2Ficons-1.3.0.tgz#94f4c93122fd7331e0e00df55804779aead8c9c2"
+  resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.3.0.tgz#94f4c93122fd7331e0e00df55804779aead8c9c2"
   integrity sha1-lPTJMSL9czHg4A31WAR3murYycI=
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
