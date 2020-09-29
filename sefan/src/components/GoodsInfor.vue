@@ -115,12 +115,89 @@ export default {};
       font-size 0.06rem
       color #eee
   .expressInfo
-    flex 1
-    background-color #f6f6f6
-    .
+    margin-bottom .1rem
+    padding 0 .18rem
+    background-color #ffffff
+    .brand
+      display flex
+      height 0.44rem
+      line-height 0.44rem
+      font-size 0.14rem
+      span:first-child
+          color #848484
+          padding-right 0.4rem
+    .detailImg
+      .title
+        font-size 0.16rem
+        color #848484
+        height 0.4rem
+        line-height 0.4rem
+        text-align center    
+        background-color #fff
+      div
+        p
+          img
+              max-width 100%
+              height auto
+              display block
+    footer 
+        width 100%
+        height .5rem
+        line-height .5rem
+        display flex
+        position fixed
+        bottom 0
+        justify-content space-between
+        padding 0 0.1rem 0 0.2rem
+        background-color #fff
+        div 
+            display flex
+            margin-right .2rem
+            p 
+                display flex
+                flex-direction column
+                align-items center
+                margin-right 0.2rem
+                padding-top 0.08rem
+                i   
+                    font-size 0.24rem
+                    line-height 0.2rem
+                span 
+                    color #565656
+                    line-height 0.2rem
+                    font-size 0.13rem
+        ul 
+            display flex
+            align-items center
+            color #fff
+            li 
+                width 1.1rem
+                height 0.4rem
+                line-height 0.4rem
+                text-align center
+                border-radius 0.05rem
+            li:first-child
+                background-color #373536
+                margin-right 0.08rem
+            li:nth-child(2)
+                background-color #ceac6c
 
+</style>
+<style lang="css">
+.expressInfo .van-address-edit{
+    padding: 0;
+}
+.expressInfo .van-address-edit .van-address-edit__buttons{
+       display: none;
+}
+.van-address-edit__fields .van-cell {
+        display:none;
+}       
+.van-address-edit__fields .van-cell--clickable{
+    display:flex
+}
+</style>
 
-    
   
 
 </style>
