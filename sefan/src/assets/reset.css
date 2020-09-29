@@ -147,6 +147,10 @@ summary,
 a {
   outline: 0 none; }
 
+li {
+  list-style: none;
+}
+
 input,
 textarea,
 button,
@@ -206,7 +210,7 @@ a {
 
 @font-face {
   font-family: yofont;
-  src: url(./icons/theater.woff) format("woff"), url(./icons/theater.ttf) format("truetype"); 
+  src: url(./icons/add.woff) format("woff"), url(./icons/add.ttf) format("truetype"); 
 }
 
 .yo-ico {

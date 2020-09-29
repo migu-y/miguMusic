@@ -8,6 +8,7 @@ module.exports = {
       .set('@u', path.resolve(__dirname, './src/utils'))
       .set('@v', path.resolve(__dirname, './src/views'))
       .set('@a', path.resolve(__dirname, './src/assets'))
+      .set('@r', path.resolve(__dirname, './src/router'))
   },
 
   // development server
@@ -16,12 +17,19 @@ module.exports = {
     proxy: {
       // 暗号: 当在浏览器地址栏里输入/api字符串的时候，http-proxy-middleware会将请求拦下来
       '/api': {
-        target: 'https://wx.maoyan.com',
+        target: 'https://go.heytea.com',
         changeOrigin: true,
+        // pathRewrite: {
+        //   '^/api': '' // /api/mmdb/movie/v2/list/hot.json -> /mmdb/movie/v2/list/hot.json
+        // }
+      } ,
+      '/data':{
+        target:'http://localhost:9876',
+        changeOrigin:true,
         pathRewrite: {
-          '^/api': '' // /api/mmdb/movie/v2/list/hot.json -> /mmdb/movie/v2/list/hot.json
+          '^/data': '' // /api/mmdb/movie/v2/list/hot.json -> /mmdb/movie/v2/list/hot.json
         }
-      } 
+      }
     }
   },
 }
