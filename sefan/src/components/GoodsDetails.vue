@@ -5,9 +5,11 @@
             商品详情
         </header>
         <div class="swiper">
-
+            <!-- <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+                <van-swipe-item v-for="item in swipeList" :key="item.id"><img :src="item.imageUrl" alt=""></van-swipe-item>
+            </van-swipe> -->
         </div>
-        <main>
+        <main>  
             <ul class="detail">
                 <li>
                     <span>¥ {{(goods.salePrice/100).toFixed(2)}}</span>
@@ -108,6 +110,7 @@ export default {
     height 100%
     display flex
     flex-direction column
+    position relative
     header 
         height 0.44rem
         background #ffffff

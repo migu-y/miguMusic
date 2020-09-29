@@ -25,10 +25,10 @@
       <ul class="list">
             <li v-for="goods in goodsList" :key="goods.id">
                 <van-cell is-link @click="showPopup">
-                    <goods-item :goods="goods"></goods-item>
+                    <goods-item :goods="goods" :key="goods.id"></goods-item>
                 </van-cell>
                 <van-popup v-model="show">
-                    <goods-detail :goods="goods"></goods-detail>
+                  <goods-detail :goods="goods" :key="goods.id"></goods-detail>
                 </van-popup>
             </li>
       </ul>
@@ -55,7 +55,6 @@ export default {
     },
     async mounted(){
         let result =await http.get("/list");
-        console.log(result)
         this.goodsList = result.data
     },
   components: {
@@ -77,6 +76,7 @@ export default {
 @import '~@a/stylus/border.styl'
 .container 
     height 100%
+    width 100%
     display flex
     flex-direction column
     header 
