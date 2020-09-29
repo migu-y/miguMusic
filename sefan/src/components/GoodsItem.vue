@@ -68,6 +68,6 @@ export default {
             background-color #d3aa79
             color #ffffff
             border-radius 0.3rem
-            
+       
         
 </style>

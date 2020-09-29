@@ -5,44 +5,37 @@
       喜小茶零糖气泡水
     </header>
     <div class="banner">
-      <img src="" alt="" />
+      <img src="https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/e21de8918bda443db9ae60e74a7e2a7d.jpg"/>
     </div>
-    <div class="main">
-      <ul class="list">
-          <li>
+          <!-- <li>
               <div class="left-img">
-                  <img src="" alt="">
+                  {{describe}}
               </div>
               <div class="right-text">
-                  <p>【混合装】喜小茶领糖气泡水</p>
+                  <p></p>
                   <p>规格为12瓶一箱哦~</p>
                   <span>￥66.00</span>
                   <div>立即购买</div>
-                    <p>
-                <i class="iconfont icon-baihuo"></i>
-            </p>
-             <p>
-                <i class="yo-ico">&#xe610;</i>
-            </p>
               </div>
-          </li>
-        <!-- <li v-for="goods in goodsList" :key="goods.id">
-          <van-cell is-link @click="showPopup">
-            <goods-item :goods="goods"></goods-item>
+          </li> -->
+          <ul>
+        <li v-for="goods in goodsList" :key="goods.id">
+          <van-cell is-link @click="showpopup">
+            <goods-It :goods="goods"></goods-It>
           </van-cell>
           <van-popup v-model="show">
-            <goods-detail :goods="goods"></goods-detail>
+            <goods-infor :goods="goods"></goods-infor>
           </van-popup>
-        </li> -->
+        </li>
       </ul>
     </div>
-  </div>
 </template>
 
 <script>
 import http from "@u/http";
-import GoodsList from "@c/GoodsList.vue";
+import GoodsIt from "@c/GoodsIt.vue";
 import GoodsInfor from "@c/GoodsInfor.vue";
+import axios from 'axios'
 
 import Vue from "vue";
 import { Popup, Cell } from "vant";
@@ -52,17 +45,20 @@ Vue.use(Cell);
 export default {
   data() {
     return {
-      goodsList: [],
+      goodsList: {},
       show: false,
     };
   },
   async mounted() {
-    let result = await http.get("/shoplist");
-    console.log(result);
-    this.goodsList = result.data;
+    let result = await axios.get("/data/shoplist.json");
+    console.log(JSON.parse(result.data.data));
+    this.goodsList = JSON.parse(result.data.data)
+    this.goodsList=this.goodsList[2];
+    this.goodsList=this.goodsList.config.data;
+    console.log(this.goodsList.config.data)
   },
   components: {
-    GoodsList,
+    GoodsIt,
     GoodsInfor,
   },
   methods: {
@@ -83,7 +79,12 @@ export default {
     height 100%
     display flex
     flex-direction column
-
+    .banner
+        width 100%
+        height 2.6rem
+        img
+          width 100%
+          height 100%
     header 
         height 0.44rem
         background transparent // 背景色透明
