@@ -1,17 +1,32 @@
-import Vue from "vue"
-import Vuex, { Store } from "vuex"
-Vue.use(Vuex)
+// import Vue from 'vue'
+// import Vuex, { Store } from 'vuex'
 
-const store = new Store({
-    state: {
-        goodsList: []
-    },
-    mutation: {
+// Vue.use(Vuex)
 
-    },
-    actions: {
+// const store = new Store({
+//     state: {
+//         goods: '',
+//         id: 1
 
-    }
-})
 
-export default store
+//     },
+//     mutations: {
+//         setGoods(state, n) {
+//             let { id, thumbnail, describe, subName, name, itemSalesVolume, labelPrice } = n
+//             state.id = id
+//             state.thumbnail = thumbnail
+//             state.describe = describe
+//             state.subName = subName
+//             state.name = name
+//             state.itemSalesVolume = itemSalesVolume
+//             state.labelPrice = labelPrice
+//         }
+//     },
+//     actions: {
+//         change({ commit }, n) {
+//             commit('setGoods', n)
+//         }
+//     },
+
+// })
+// export default store

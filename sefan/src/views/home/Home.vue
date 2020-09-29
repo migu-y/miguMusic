@@ -65,9 +65,13 @@ export default {
         flex 1
     footer
         height .5rem
+        
         ul
             height 100%
             display flex
+            position fixed
+            bottom 0
+            background-color #fff
             border_1px(1px 0 0 0)
             li
                 flex 1
