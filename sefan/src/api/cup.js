@@ -1,0 +1,406 @@
+const cup = function() {
+    const data = 
+        
+             [
+              {
+                "storeId": 9203,
+                "storeIdList": null,
+                "wxItem": {
+                  "id": 296008,
+                  "itemNo": "5844112677573863001",
+                  "storeId": 9203,
+                  "barcode": "WD015844112677570352",
+                  "name": "喜茶XCORKCICLE酷革  经典系列灵感杯",
+                  "categoryId": 5008066737,
+                  "labelId": 119,
+                  "labelName": "杯子",
+                  "brand": "喜茶xCORKCICLE",
+                  "categoryDTO": {
+                    "id": 5008066737,
+                    "parentId": null,
+                    "category": "杯类产品",
+                    "categoryImgUrl": "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/fe5bafefa36c4c07b1b4e8c8bf4cb9f8z",
+                    "status": 1,
+                    "seq": 28,
+                    "isLeaf": 1,
+                    "industryId": 3,
+                    "name": null,
+                    "imgUrl": null,
+                    "imgUrlValue": null,
+                    "childrenCategory": [],
+                    "parentCategory": null,
+                    "outCategoryIdList": null
+                  },
+                  "salePrice": 24800,
+                  "labelPrice": 24800,
+                  "memberPrice": null,
+                  "itemSalesVolume": 720,
+                  "virtualSalesVolume": 0,
+                  "isShelf": 1,
+                  "itemStock": 298,
+                  "itemWithholdStock": 0,
+                  "describe": "<p><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/074afe9fb1af43029dc779137bbaa91cz\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/d4aee3a51baf45fbbc0d5319dd2e3d08z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/63198624fc3f4d41a1c5786000f6883cz\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/ec5fdaf3fbc045df9629438a45650e24z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/072ccf02e60448e2a8eb783e4ba92542z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/f1ca48c88dc9438abfefa9ca57c43dca.png\" style=\"max-width:100%;height:auto;display:block;\"></p>",
+                  "status": 1,
+                  "thumbnail": "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/e461d6d756ec4e248715c8867dcf08f8.png",
+                  "tag1": 0,
+                  "unit": "个",
+                  "paySubtractStock": false,
+                  "itemOrder": 90,
+                  "createTime": "2020-03-17 10:30:25",
+                  "updateTime": "2020-09-28 09:26:39",
+                  "isPreSell": false,
+                  "costPrice": 0,
+                  "freight": 1200,
+                  "weight": 0,
+                  "placeOfOrigin": "",
+                  "shelfLife": null,
+                  "shelfLifeUnit": 0,
+                  "deliveryTimeType": 1,
+                  "deliveryTime": null,
+                  "daysAfterBuy": 1,
+                  "daysAfterBuyRange": "1-3",
+                  "preSellStartTime": null,
+                  "preSellEndTime": null,
+                  "freightTemplateId": 21,
+                  "invoiceTemplateId": null,
+                  "length": null,
+                  "width": null,
+                  "height": null,
+                  "volume": null,
+                  "subName": "本商品单件包邮，订单中含其他非包邮商品需另付邮费",
+                  "peopleLimitAmount": 0,
+                  "placeOfDispatch": "广东东莞",
+                  "shelfTime": "2020-09-02T05:49:00.000+00:00",
+                  "describeHtmlJsonStr": "[{\"name\":\"p\",\"children\":[{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/074afe9fb1af43029dc779137bbaa91cz\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/d4aee3a51baf45fbbc0d5319dd2e3d08z\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/63198624fc3f4d41a1c5786000f6883cz\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/ec5fdaf3fbc045df9629438a45650e24z\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/072ccf02e60448e2a8eb783e4ba92542z\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/f1ca48c88dc9438abfefa9ca57c43dca.png\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}}]}]",
+                  "skuBarCodes": null
+                },
+                "materialUrls": ["https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/e461d6d756ec4e248715c8867dcf08f8.png", "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/78167d4922294e0ab3042f79ead63896.png", "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/936b6c03eda34114a3247ca5a23c94b3.png", "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/9baf57e4a3a148ca8120f598506982a5.png"],
+                "skuTreeList": [{
+                  "keyId": 316,
+                  "attrKeySort": 0,
+                  "keyName": "杯型",
+                  "showImage": 1,
+                  "treeValList": [{
+                    "valId": 1569,
+                    "attrValSort": 0,
+                    "valName": "灵感饮酒杯355ML",
+                    "imageId": 13512,
+                    "imageUrl": "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/bc8474dccb204067b05ac724d6346bb7.png"
+                  }, {
+                    "valId": 1571,
+                    "attrValSort": 1,
+                    "valName": "灵感保温杯270ML",
+                    "imageId": 13510,
+                    "imageUrl": "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/e45da60ed4764c14ae8a7110e8cc75ce.png"
+                  }, {
+                    "valId": 1572,
+                    "attrValSort": 2,
+                    "valName": "灵感保温杯475ML",
+                    "imageId": 13508,
+                    "imageUrl": "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/67a3b0b66822460b8005055383b533c2.png"
+                  }, {
+                    "valId": 1573,
+                    "attrValSort": 3,
+                    "valName": "灵感饮茶杯475ML",
+                    "imageId": 13511,
+                    "imageUrl": "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/dfe3e14250634dbdbc9d98c39c1774aa.png"
+                  }, {
+                    "valId": 1574,
+                    "attrValSort": 4,
+                    "valName": "灵感饮茶杯700ML",
+                    "imageId": 13509,
+                    "imageUrl": "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/7219ba1c0c75406ab36c8c02157e7d29.png"
+                  }]
+                }],
+                "skuInfoList": [{
+                  "skuId": 12270,
+                  "skuBarcode": "50100854",
+                  "salePrice": 24800,
+                  "labelPrice": 24800,
+                  "memberPrice": null,
+                  "stock": 30,
+                  "withholdStock": 0,
+                  "skuInfoNames": [{
+                    "keyId": 316,
+                    "attrKeySort": 0,
+                    "keyName": "杯型",
+                    "valId": 1569,
+                    "attrValSort": null,
+                    "valName": "灵感饮酒杯355ML"
+                  }],
+                  "itemNo": "5844112677573863001"
+                }, {
+                  "skuId": 12271,
+                  "skuBarcode": "50100852",
+                  "salePrice": 28800,
+                  "labelPrice": 28800,
+                  "memberPrice": null,
+                  "stock": 75,
+                  "withholdStock": 0,
+                  "skuInfoNames": [{
+                    "keyId": 316,
+                    "attrKeySort": 0,
+                    "keyName": "杯型",
+                    "valId": 1571,
+                    "attrValSort": null,
+                    "valName": "灵感保温杯270ML"
+                  }],
+                  "itemNo": "5844112677573863001"
+                }, {
+                  "skuId": 12272,
+                  "skuBarcode": "50100853",
+                  "salePrice": 36800,
+                  "labelPrice": 36800,
+                  "memberPrice": null,
+                  "stock": 75,
+                  "withholdStock": 0,
+                  "skuInfoNames": [{
+                    "keyId": 316,
+                    "attrKeySort": 0,
+                    "keyName": "杯型",
+                    "valId": 1572,
+                    "attrValSort": null,
+                    "valName": "灵感保温杯475ML"
+                  }],
+                  "itemNo": "5844112677573863001"
+                }, {
+                  "skuId": 12273,
+                  "skuBarcode": "50100855",
+                  "salePrice": 32800,
+                  "labelPrice": 32800,
+                  "memberPrice": null,
+                  "stock": 62,
+                  "withholdStock": 0,
+                  "skuInfoNames": [{
+                    "keyId": 316,
+                    "attrKeySort": 0,
+                    "keyName": "杯型",
+                    "valId": 1573,
+                    "attrValSort": null,
+                    "valName": "灵感饮茶杯475ML"
+                  }],
+                  "itemNo": "5844112677573863001"
+                }, {
+                  "skuId": 12274,
+                  "skuBarcode": "50100856",
+                  "salePrice": 36800,
+                  "labelPrice": 36800,
+                  "memberPrice": null,
+                  "stock": 56,
+                  "withholdStock": 0,
+                  "skuInfoNames": [{
+                    "keyId": 316,
+                    "attrKeySort": 0,
+                    "keyName": "杯型",
+                    "valId": 1574,
+                    "attrValSort": null,
+                    "valName": "灵感饮茶杯700ML"
+                  }],
+                  "itemNo": "5844112677573863001"
+                }]
+              },
+              
+              
+              {
+                "storeId": 9203,
+                "storeIdList": null,
+                "wxItem": {
+                  "id": 136083,
+                  "itemNo": "5726738365207065001",
+                  "storeId": 9203,
+                  "barcode": "WD015726738365205682",
+                  "name": "「中国制造」随行杯",
+                  "categoryId": 5008066737,
+                  "labelId": 119,
+                  "labelName": "杯子",
+                  "brand": "",
+                  "categoryDTO": {
+                    "id": 5008066737,
+                    "parentId": null,
+                    "category": "杯类产品",
+                    "categoryImgUrl": "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/fe5bafefa36c4c07b1b4e8c8bf4cb9f8z",
+                    "status": 1,
+                    "seq": 28,
+                    "isLeaf": 1,
+                    "industryId": 3,
+                    "name": null,
+                    "imgUrl": null,
+                    "imgUrlValue": null,
+                    "childrenCategory": [],
+                    "parentCategory": null,
+                    "outCategoryIdList": null
+                  },
+                  "salePrice": 3900,
+                  "labelPrice": 3900,
+                  "memberPrice": null,
+                  "itemSalesVolume": 1252,
+                  "virtualSalesVolume": 0,
+                  "isShelf": 1,
+                  "itemStock": 153,
+                  "itemWithholdStock": 0,
+                  "describe": "<p><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/9d8e872ea89c43bbbd9588b1030e1c6d.png\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/c1ecbdcd67624303a7fd22a8e113f7dbz\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/35d6d8f54a074389b1a6751d302ace04z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/1bedfa1d5d164acfabfd2e69349da4b3z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/c947d1fd805a4d759a3a430280dde36dz\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/3b717f380f184a56b07834e06206d068z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/88260bc036534078bd6e10290cbd9ed7z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/ab56ab8cab264689865aa711873045d6z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/58020b98e0b94eefb69e0810d6189b02z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/7ea95cd2a91e4025b4094d4527f5fb76z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/f1ca48c88dc9438abfefa9ca57c43dca.png\" style=\"max-width:100%;height:auto;display:block;\"></p>",
+                  "status": 1,
+                  "thumbnail": "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/9dcf14f7bcf347d39bdc30e4462632fb.png",
+                  "tag1": 0,
+                  "unit": "个",
+                  "paySubtractStock": false,
+                  "itemOrder": 94,
+                  "createTime": "2019-11-02 13:50:36",
+                  "updateTime": "2020-09-28 18:42:20",
+                  "isPreSell": false,
+                  "costPrice": 0,
+                  "freight": 1200,
+                  "weight": 0,
+                  "placeOfOrigin": "",
+                  "shelfLife": null,
+                  "shelfLifeUnit": 0,
+                  "deliveryTimeType": 1,
+                  "deliveryTime": null,
+                  "daysAfterBuy": 1,
+                  "daysAfterBuyRange": "1-3",
+                  "preSellStartTime": null,
+                  "preSellEndTime": null,
+                  "freightTemplateId": 21,
+                  "invoiceTemplateId": null,
+                  "length": null,
+                  "width": null,
+                  "height": null,
+                  "volume": null,
+                  "subName": null,
+                  "peopleLimitAmount": 0,
+                  "placeOfDispatch": "广东东莞",
+                  "shelfTime": "2020-09-01T10:41:48.000+00:00",
+                  "describeHtmlJsonStr": "[{\"name\":\"p\",\"children\":[{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/9d8e872ea89c43bbbd9588b1030e1c6d.png\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/c1ecbdcd67624303a7fd22a8e113f7dbz\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/35d6d8f54a074389b1a6751d302ace04z\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/1bedfa1d5d164acfabfd2e69349da4b3z\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/c947d1fd805a4d759a3a430280dde36dz\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/3b717f380f184a56b07834e06206d068z\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/88260bc036534078bd6e10290cbd9ed7z\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/ab56ab8cab264689865aa711873045d6z\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/58020b98e0b94eefb69e0810d6189b02z\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/7ea95cd2a91e4025b4094d4527f5fb76z\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}},{\"name\":\"img\",\"attrs\":{\"src\":\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/f1ca48c88dc9438abfefa9ca57c43dca.png\",\"style\":\"max-width:100%;height:auto;display:block;max-width: 100%;vertical-align:top;\"}}]}]",
+                  "skuBarCodes": null
+                },
+                "materialUrls": ["https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/9dcf14f7bcf347d39bdc30e4462632fb.png", "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/74c3a72a60f64d64afc4e52a25403878.png", "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/624d16e684044c95916088385880f95d.png", "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/8620720e5b7f4deda18787e5f0c425fb.png"],
+                "skuTreeList": [{
+                  "keyId": 106,
+                  "attrKeySort": 0,
+                  "keyName": "规格",
+                  "showImage": 1,
+                  "treeValList": [{
+                    "valId": 712,
+                    "attrValSort": 0,
+                    "valName": "中国制造款",
+                    "imageId": 14966,
+                    "imageUrl": "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/74c3a72a60f64d64afc4e52a25403878.png"
+                  }]
+                }, {
+                  "keyId": 152,
+                  "attrKeySort": 1,
+                  "keyName": "容量",
+                  "showImage": 0,
+                  "treeValList": [{
+                    "valId": 713,
+                    "attrValSort": 0,
+                    "valName": "500ml",
+                    "imageId": null,
+                    "imageUrl": null
+                  }]
+                }],
+                "skuInfoList": [{
+                  "skuId": 10658,
+                  "skuBarcode": "50100541",
+                  "salePrice": 3900,
+                  "labelPrice": 3900,
+                  "memberPrice": null,
+                  "stock": 153,
+                  "withholdStock": 0,
+                  "skuInfoNames": [{
+                    "keyId": 106,
+                    "attrKeySort": 0,
+                    "keyName": "规格",
+                    "valId": 712,
+                    "attrValSort": null,
+                    "valName": "中国制造款"
+                  }, {
+                    "keyId": 152,
+                    "attrKeySort": 1,
+                    "keyName": "容量",
+                    "valId": 713,
+                    "attrValSort": null,
+                    "valName": "500ml"
+                  }],
+                  "itemNo": "5726738365207065001"
+                }]
+              }
+            //   {
+            //     "id": 136083,
+            //     "itemNo": "5726738365207065001",
+            //     "storeId": 9203,
+            //     "barcode": "WD015726738365205682",
+            //     "name": "「中国制造」随行杯",
+            //     "categoryId": 5008066737,
+            //     "labelId": 119,
+            //     "labelName": "杯子",
+            //     "brand": "",
+            //     "categoryDTO": {
+            //         "id": 5008066737,
+            //         "parentId": null,
+            //         "category": "杯类产品",
+            //         "categoryImgUrl": "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/fe5bafefa36c4c07b1b4e8c8bf4cb9f8z",
+            //         "status": 1,
+            //         "seq": 28,
+            //         "isLeaf": 1,
+            //         "industryId": 3,
+            //         "name": null,
+            //         "imgUrl": null,
+            //         "imgUrlValue": null,
+            //         "childrenCategory": [],
+            //         "parentCategory": null,
+            //         "outCategoryIdList": null
+            //     },
+            //     "salePrice": 3900,
+            //     "labelPrice": 3900,
+            //     "memberPrice": null,
+            //     "itemSalesVolume": 1241,
+            //     "virtualSalesVolume": 0,
+            //     "isShelf": 1,
+            //     "itemStock": 161,
+            //     "itemWithholdStock": 0,
+            //     "describe": "<p><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/9d8e872ea89c43bbbd9588b1030e1c6d.png\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/c1ecbdcd67624303a7fd22a8e113f7dbz\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/35d6d8f54a074389b1a6751d302ace04z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/1bedfa1d5d164acfabfd2e69349da4b3z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/c947d1fd805a4d759a3a430280dde36dz\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/3b717f380f184a56b07834e06206d068z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/88260bc036534078bd6e10290cbd9ed7z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/ab56ab8cab264689865aa711873045d6z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/58020b98e0b94eefb69e0810d6189b02z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/7ea95cd2a91e4025b4094d4527f5fb76z\" style=\"max-width:100%;height:auto;display:block;\"><img src=\"https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/f1ca48c88dc9438abfefa9ca57c43dca.png\" style=\"max-width:100%;height:auto;display:block;\"></p>",
+            //     "status": 1,
+            //     "thumbnail": "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/9dcf14f7bcf347d39bdc30e4462632fb.png",
+            //     "tag1": 0,
+            //     "unit": "个",
+            //     "paySubtractStock": false,
+            //     "itemOrder": 94,
+            //     "createTime": "2019-11-02 13:50:36",
+            //     "updateTime": "2020-09-26 18:15:09",
+            //     "isPreSell": false,
+            //     "costPrice": 0,
+            //     "freight": 1200,
+            //     "weight": 0,
+            //     "placeOfOrigin": "",
+            //     "shelfLife": null,
+            //     "shelfLifeUnit": 0,
+            //     "deliveryTimeType": 1,
+            //     "deliveryTime": null,
+            //     "daysAfterBuy": 1,
+            //     "daysAfterBuyRange": "1-3",
+            //     "preSellStartTime": null,
+            //     "preSellEndTime": null,
+            //     "freightTemplateId": 21,
+            //     "invoiceTemplateId": null,
+            //     "length": null,
+            //     "width": null,
+            //     "height": null,
+            //     "volume": null,
+            //     "subName": null,
+            //     "peopleLimitAmount": 0,
+            //     "placeOfDispatch": null,
+            //     "shelfTime": "2020-09-01T10:41:48.000+00:00",
+            //     "describeHtmlJsonStr": null,
+            //     "skuBarCodes": null
+            // }
+             ]
+            
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(data)
+      }, 500)
+    })
+  }
+  
+  export default cup
