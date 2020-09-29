@@ -1,7 +1,7 @@
 <template>
     <div >
         <van-nav-bar
-  title="喜小茶瓶装场"
+  title="灵感周边"
 
   left-text=""
  

@@ -28,10 +28,16 @@
             </div>
             <div class="right">
               <div class="r-top">
+                <router-link to="/Goods/laboratory">
                 <img src="../../../public/img/shiyanshi.png" alt="">
+                </router-link>
+                
               </div>
               <div class="r-bottom">
+                <router-link to="/Goods/surrounds">
                 <img src="../../../public/img/linggan.png" alt="">
+                </router-link>
+                
               </div>
             </div>
           </div>
