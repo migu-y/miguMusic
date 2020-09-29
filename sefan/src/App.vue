@@ -7,12 +7,14 @@
 
 
 export default {
-    
+    components:{
+        
+    }
 }
 </script>
 <style lang="stylus" scoped>
 .container {
-  height: 100%;
+  height 100%;
   overflow-y scroll
 }
 </style>

@@ -1,9 +1,12 @@
 <template>
-  <div class="cotainer">
+  <div class="cotain">
       <router-view></router-view>
     <div>
       <router-link tag="li" active-class="active" to="/variety/heytealabor">
-        <span>喜茶实验室</span>
+          <span>喜茶实验室</span>
+      </router-link>
+      <router-link tag="li" active-class="active" to="/variety/factory">
+          <span>喜小茶瓶装厂</span>
       </router-link>
     </div>
   </div>
