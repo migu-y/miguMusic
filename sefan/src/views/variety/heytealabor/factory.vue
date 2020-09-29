@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <header>
-      <div @click="handleClick"><i class="iconfont incon-back"></i></div>
+      <div @click="handleClick"><i class="iconfont icon-back"></i></div>
       喜小茶零糖气泡水
     </header>
     <div class="banner">
@@ -91,9 +91,13 @@ export default {
         text-align center// 居中对齐
         line-height 0.44rem // 行高
         font-size 0.16rem // 文字大小
-        // font-weight bold         //文字加粗
+        font-weight bold         //文字加粗
         color #000
-    
+        position relative
+        div
+            position absolute 
+            left 0.22rem
+            top 0.03rem
 
    .banner 
       
