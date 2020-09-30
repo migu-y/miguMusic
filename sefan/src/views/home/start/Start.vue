@@ -52,9 +52,6 @@
                 </ul>
             </div>
         </main>
-        <footer>
-
-        </footer>
     </div>
     
 </template>
@@ -87,6 +84,7 @@ export default {
 <style scoped lang="stylus">
 @import '~@a/stylus/border.styl'
 .container
+    width 100%
     .swipe
         .my-swipe 
             .van-swipe-item 
@@ -95,8 +93,8 @@ export default {
                     // height calc(278/375*100%)
                     height 2.78rem
     main
-        padding 0 .18rem
         height 2.8rem
+        width 100%
         background-color #f7f7f7
         position relative
         display  flex
@@ -107,7 +105,7 @@ export default {
             border-top-left-radius .1rem
             border-top-right-radius .1rem
             height 1.8rem
-            width 3.39rem
+            width 100%
             top -0.1rem
             padding 0.24rem 0
             ul 
@@ -138,7 +136,7 @@ export default {
                     border_1px(0 1px 0 0)
 
         .start-mid
-            width 3.39rem
+            width 100%
             height 0.76rem
             background-color #ffffff
             position absolute 
@@ -164,12 +162,13 @@ export default {
                     margin-right 0.1rem
         .start-bto
             height 0.5rem
-            width 3.39rem
+            width 100%
             margin-top 0.12rem
             position absolute 
             top 2.65rem
             ul 
                 display flex 
+                height 100%
                 justify-content space-between
                 padding 0.06rem 0.03rem
                 li

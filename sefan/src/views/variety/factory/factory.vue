@@ -40,11 +40,10 @@ export default {
   },
   async mounted() {
     let result = await axios.get("/data/shoplist.json");
-    console.log(JSON.parse(result.data.data));
     this.goodsList = JSON.parse(result.data.data)
     this.goodsList=this.goodsList[2];
     this.goodsList=this.goodsList.config.data;
-    console.log(this.goodsList.config.data)
+    console.log(this.goodsList)
   },
   components: {
     GoodsIt,

@@ -58,15 +58,22 @@ export default {
 @import '~@a/stylus/ellipsis.styl'
 .container
     height 100%
+    width 100%
     display flex
     flex-direction column
     .main
         flex 1
     footer
         height .5rem
+        position: fixed;
+        bottom: 0;
+        width: 100%;
         ul
             height 100%
             display flex
+            position fixed
+            bottom 0
+            background-color #fff
             border_1px(1px 0 0 0)
             li
                 flex 1
@@ -85,3 +92,4 @@ export default {
                                 fill #cc4c43
 </style>
 
+  
