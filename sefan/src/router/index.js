@@ -3,7 +3,8 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 import Home from "@v/home/Home";
-
+import Happy from '@v/happy/Happy.vue'
+import Details from '@v/details/Details.vue'
 const routes = [{
         path: "/",
         name: "home",
@@ -64,6 +65,16 @@ const routes = [{
                             import ( /*webpackChunkName:"others"*/ '@v/home/Others.vue')
                     },
                 ]
+            },
+            {
+                path: '/details',
+                name: 'details',
+                component: Details
+            },
+            {
+                path: '/happy',
+                name: 'happy',
+                component: Happy
             },
             {
                 path: "factory",
@@ -180,8 +191,7 @@ const router = new VueRouter({
 
 // <<<<<<< HEAD
 
-// // import Happy from '@v/happy/Happy.vue'
-// // import Details from '@v/details/Details.vue'
+
 
 // // const routes = [{
 // //         path: '/',
