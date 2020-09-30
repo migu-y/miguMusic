@@ -203,14 +203,18 @@ a {
   height: 0;
   content: "\0020"; }
 
-@font-face {
+/* @font-face {
   font-family: yofont;
   src: url(//ss.qunarzz.com/yo/font/1.0.3/yofont.woff) format("woff"), url(//ss.qunarzz.com/yo/font/1.0.3/yofont.ttf) format("truetype"); 
-}
+} */
 
 @font-face {
   font-family: yofont;
   src: url(./icons/add.woff) format("woff"), url(./icons/add.ttf) format("truetype"); 
+}
+@font-face {
+    font-family: yofont;
+    src: url(./font/iconfont.woff) format("woff"),url(./font/iconfont.woff2) format("woff"), url(./font/iconfont.ttf) format("truetype");
 }
 
 .yo-ico {

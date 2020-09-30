@@ -5,7 +5,7 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "mock": "json-server ./src/mock/mock.js -p 9876 -w"
+        "mock": "json-server ./src/mock/mock.js -p 9000 -w"
     },
     "dependencies": {
         "axios": "^0.20.0",

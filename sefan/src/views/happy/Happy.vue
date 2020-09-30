@@ -34,11 +34,11 @@ export default {
   },
   methods: {
     onClickLeft() {
-      this.$router.push('/cup')
+      this.$router.push('/soularound/cup')
     },
   },
   async mounted(){
-      let result = await http.get('/data/around')
+      let result = await http.get('/soul/around')
       this.aroundList = result;
     //   console.log(this.aroundList)
   }
