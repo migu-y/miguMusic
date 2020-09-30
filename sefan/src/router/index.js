@@ -66,11 +66,7 @@ const routes = [{
                     },
                 ]
             },
-            {
-                path: '/details',
-                name: 'details',
-                component: Details
-            },
+
             {
                 path: '/happy',
                 name: 'happy',
@@ -103,7 +99,11 @@ const routes = [{
             },
         ]
     },
-
+    {
+        path: '/details',
+        name: 'details',
+        component: Details
+    },
 ]
 
 // =======

@@ -10,12 +10,24 @@
       </ul>
     </nav>
     <section class="main">
-
+        <van-tabs v-model="active" animated>
+          <van-tab v-for="index in 4" title="当前订单" :key="index">
+            内容 {{ index }}
+          </van-tab>
+            <van-tab v-for="index in 4" :title="'选项 ' + index" :key="index">
+            内容 {{ index }}
+          </van-tab>
+        </van-tabs>
     </section>
   </div>
 </template>
 
 <script>
+import Vue from 'vue';
+import { Tab, Tabs } from 'vant';
+
+Vue.use(Tab);
+Vue.use(Tabs);
 export default {
 
 }
