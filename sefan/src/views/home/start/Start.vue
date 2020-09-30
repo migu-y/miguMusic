@@ -168,6 +168,7 @@ export default {
             top 2.65rem
             ul 
                 display flex 
+                height 100%
                 justify-content space-between
                 padding 0.06rem 0.03rem
                 li
