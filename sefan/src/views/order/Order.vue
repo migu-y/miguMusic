@@ -1,35 +1,45 @@
 <template>
   <div class="container">
     <header>
-      <div class="talk"><i class="iconfont icon-shuqian"></i> 想对你说</div>
+      <div class="talk" @click="handleTalkClick"><i class="iconfont icon-shuqian"></i> 想对你说</div>
     </header>
     <nav>
       <ul class="orderNav">
-        <li>当前订单</li>
-        <li>历史订单</li>
-      </ul>
-    </nav>
-    <section class="main">
         <van-tabs v-model="active" animated>
-          <van-tab v-for="index in 4" title="当前订单" :key="index">
-            内容 {{ index }}
+          <van-tab  title="当前订单" :key="1">
+            <current-order></current-order>
           </van-tab>
-            <van-tab v-for="index in 4" :title="'选项 ' + index" :key="index">
-            内容 {{ index }}
+          <van-tab  title="历史订单" :key="2">
+            <history-order></history-order>
           </van-tab>
         </van-tabs>
-    </section>
+      </ul>
+    </nav>
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
 import { Tab, Tabs } from 'vant';
-
+import CurrentOrder from "@v/order/currentOrder/CurrentOrder.vue"
+import HistoryOrder from "@v/order/historyOrder/HistoryOrder.vue"
 Vue.use(Tab);
 Vue.use(Tabs);
 export default {
-
+data() {
+    return {
+      active: 2,
+    };
+  },
+  components:{
+    CurrentOrder,
+    HistoryOrder
+  },
+  methods:{
+    handleTalkClick(){
+      this.$router.push("/Talk")
+    }
+  }
 }
 </script>
 
@@ -53,19 +63,35 @@ export default {
       border-radius 0.2rem
       border 1px solid #ccc
   nav 
-    padding-top 0.2rem 
-    
+    height 100%
+    background-color #f6f6f6
     .orderNav
         display flex
         justify-content space-around
         font-size 0.16rem
-        li 
-            padding-bottom 0.1rem
-        li:first-child
-            border_1px(0 0 3px 0)
-            border-bottom-color #000
-  section.main 
-    flex 1
-    background-color yellow 
-    border-top 1px solid #cccccc
+</style>
+<style lang="css">
+.van-tab{
+ font-size: 0.16rem;
+ margin-right:0.2rem
+}
+.van-tabs {
+width:100%
+}
+.van-tabs__nav {
+  display: flex;
+  width:100%;
+  justify-content: space-around
+}
+.van-tabs__line{
+  width :0.56rem;
+  background-color: #000
+}
+.van-tab--active {
+    color: #323233;
+    font-weight: 800;
+}
+.van-tabs__content {
+  margin-top: 0.2rem;
+}
 </style>
