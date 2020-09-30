@@ -131,6 +131,7 @@ export default {};
         font-size 0.16rem
         color #848484
         height 0.4rem
+        width 0.3rem
         line-height 0.4rem
         text-align center    
         background-color #fff
