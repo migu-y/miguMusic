@@ -11,7 +11,7 @@
                     <li>¥ 66.00</li>
                 </ul>
             </li>
-            <i class="iconfont icon-roundclosefill"></i>
+            <i class="iconfont icon-roundclosefill" @click="handleCancleClick"></i>
         </ul>
         <div class="count">
             <p>口味</p>
@@ -40,6 +40,11 @@ export default {
       value: 1,
     };
   },
+  methods:{
+      handleCancleClick(){
+          this.$router.back()
+      }
+  }
 }
 </script>
 

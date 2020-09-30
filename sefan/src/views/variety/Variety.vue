@@ -22,20 +22,20 @@
           </div>
           <div class="center">
             <div class="left">
-              <router-link to="/Goods/factory">
+              <router-link to="/factory">
                <img src="../../../public/img/pingzhuangchang.png" alt="">
               </router-link>
               
             </div>
             <div class="right">
               <div class="r-top">
-                <router-link to="/variety/heytealabor">
+                <router-link to="/heytealabor">
                 <img src="../../../public/img/shiyanshi.png" alt="">
                 </router-link>
                 
               </div>
               <div class="r-bottom">
-                <router-link to="/variety/soularound">
+                <router-link to="/soularound">
                 <img src="../../../public/img/linggan.png" alt="">
                 </router-link>
                 

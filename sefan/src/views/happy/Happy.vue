@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     onClickLeft() {
-      this.$router.push('/variety/soularound/cup')
+      this.$router.push('/soularound/cup')
     },
   },
   async mounted(){

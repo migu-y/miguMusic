@@ -65,7 +65,9 @@ export default {
         flex 1
     footer
         height .5rem
-        
+        position: fixed;
+        bottom: 0;
+        width: 100%;
         ul
             height 100%
             display flex

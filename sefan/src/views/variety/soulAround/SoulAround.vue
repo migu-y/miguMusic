@@ -18,7 +18,7 @@
 
     <div class="main">
         <van-tabs v-model="active" line-width='.6rem' color='rgb(227,188,145)' title-active-color='rgb(227,188,145)' duration='0'>
-          <van-tab title="杯类产品" to='/cup'></van-tab>
+          <van-tab title="杯类产品" to='/soularound/cup'></van-tab>
           <van-tab title="包袋类" to='bag'></van-tab>
           <van-tab title="手机壳" to='phoneke'></van-tab>
           <van-tab title="其他周边" to='others'></van-tab>

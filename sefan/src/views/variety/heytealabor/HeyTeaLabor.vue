@@ -132,9 +132,11 @@ export default {
         flex 1
         background-color #f6f6f6
         padding .2rem
+        height 100%
         .list 
             display flex
             flex-wrap wrap
+            height 100%
             li 
                 margin-bottom .1rem
                 border-radius .1rem
