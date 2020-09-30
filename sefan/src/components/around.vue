@@ -1,6 +1,6 @@
 <template>
     <div class="around_icon">
-        <div class="around_del" v-for="item in data" :key='item.wxItem.id' @click='clickHandler'>
+        <div class="around_del" v-for="item in data" :key='item.wxItem.id' @click='clickHandler(item)'>
             <img :src="item.wxItem.thumbnail" alt="">
             <div class="info">
                 <h2>{{item.wxItem.name}}</h2>
@@ -16,8 +16,11 @@
         props:['data'],
 
         methods:{
-            clickHandler(){
-                this.$router.push('/details')
+            clickHandler(item){
+                this.$router.push({
+                    name:'details',
+                    params:{info:item}
+                })
             }
         },
         filters:{

@@ -1,6 +1,6 @@
 <template>
     <div class="goods_icon">
-        <div class="goods-info" v-for="goods in data" :key="goods.wxItem.id" @click='clickHandler'>
+        <div class="goods-info" v-for="goods in data" :key="goods.wxItem.id" @click='clickHandler(goods)'>
             <h2><img :src="goods.wxItem.thumbnail" alt=""></h2>
             <h3>{{ goods.wxItem.name }}</h3>
             <p class="shoped"><span>{{ goods.wxItem.itemSalesVolume }}</span>人已购买</p>
@@ -18,8 +18,11 @@
             // console.log(this.data);
         },
         methods:{
-            clickHandler(){
-                this.$router.push('/details')
+            clickHandler(goods){
+                this.$router.push({
+                    name:'details',
+                    params:{info:goods}
+                })
             }
         },
         filters:{
