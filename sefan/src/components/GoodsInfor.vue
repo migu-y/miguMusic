@@ -6,10 +6,7 @@
           </header>
       <div class="banner">
             <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-                <van-swipe-item><img src="" alt=""></van-swipe-item>
-                <van-swipe-item><img src="" alt=""></van-swipe-item>
-                <van-swipe-item><img src="" alt=""></van-swipe-item>
-                <van-swipe-item><img src="" alt=""></van-swipe-item>
+                 <van-swipe-item v-for="item in swipeList" :key="item.id"><img :src="item.imageUrl" alt=""></van-swipe-item>
             </van-swipe>
       </div>
       <div class="infor">
@@ -68,9 +65,11 @@
 </template>
 
 <script>
+import http from "@u/http";
+import axios from 'axios';
+
 import Vue from "vue";
 import { Swipe, SwipeItem } from "vant";
-
 Vue.use(Swipe);
 Vue.use(SwipeItem);
 export default {};
@@ -131,6 +130,7 @@ export default {};
         font-size 0.16rem
         color #848484
         height 0.4rem
+        width 0.3rem
         line-height 0.4rem
         text-align center    
         background-color #fff

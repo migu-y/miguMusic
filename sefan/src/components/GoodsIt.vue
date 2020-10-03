@@ -4,13 +4,13 @@
       <ul class="list"> 
           <li>
               <div class="left-img">
-                <img :src="goods.thumbnail">
+                <img :src="goods.wxItem.thumbnail">
                 <!-- {{goods.describe.filter()}} -->
               </div>
               <div class="right-text">
-                  <p>{{goods.name}}</p>
-                  <p>{{goods.subName}}</p>
-                  <span>￥{{(goods.salePrice/100).toFixed(2)}}</span>
+                  <p>{{goods.wxItem.name}}</p>
+                  <p>{{goods.wxItem.subName}}</p>
+                  <span>￥{{(goods.wxItem.salePrice/100).toFixed(2)}}</span>
                   <div>立即购买</div>
               </div>
           </li>
@@ -26,48 +26,42 @@ export default {
 </script>
 <style scoped lang="stylus">
 @import '~@a/stylus/ellipsis.styl'
-.container 
-    height 100%
-    display flex
-    flex-direction column
-    .banner  
-      height 3rem
-      background yellowgreen
-      margin-bottom .1rem
      .list 
         flex 1
         background #eee
         overflow-y scroll
         height 60%
+        padding-top .05rem
         li 
           display flex
           flex-direction row
-          height 50%
-          padding .1rem .15rem
-          margin-bottom .05rem
           background #fff
+          height 50%
+          padding .05rem .15rem
+          margin .02rem .05rem
           .left-img
             img
-              width 1.5rem
-              height 1.5rem
-              background red
-              margin-right .15rem
+              width 1.3rem
+              height 1.3rem
+              margin .1rem .15rem .1rem 0
+              
           .right-text
               width 60%
               p:nth-of-type(1) 
-                  font-size 0.16rem
-                  margin 0.1rem
-              
+                font-size 0.14rem
+                line-height  0.14rem
+                margin-top 0.2rem
+                ellipsis()
               p:nth-of-type(2) 
                   font-size 0.12rem
-                  color #666
-                  margin-top: 0.02rem
+                  line-height 0.12rem
+                  padding-top 0.05rem
+                  color #999
               
-
               span 
-                  font-size 0.14rem
+                  font-size 0.16rem
                   font-weight bold
-                  margin-top 0.16rem
+                  margin-top 0.15rem
                   display block
               
 
@@ -75,10 +69,10 @@ export default {
                   height 0.25rem
                   width 0.7rem
                   background #daa778
-                  border-radius 0.06rem
+                  border-radius 0.25rem
                   color #fff
                   font-size 0.1rem
                   text-align center // 居中对齐
                   line-height 0.25rem
-                  margin-top 0.13rem
+                  margin-top 0.08rem
 </style>

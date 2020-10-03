@@ -24,7 +24,6 @@
 import http from "@u/http";
 import GoodsIt from "@c/GoodsIt.vue";
 import GoodsInfor from "@c/GoodsInfor.vue";
-import axios from 'axios'
 
 import Vue from "vue";
 import { Popup, Cell } from "vant";
@@ -39,11 +38,8 @@ export default {
     };
   },
   async mounted() {
-    let result = await axios.get("/data/shoplist.json");
-    this.goodsList = JSON.parse(result.data.data)
-    this.goodsList=this.goodsList[2];
-    this.goodsList=this.goodsList.config.data;
-    console.log(this.goodsList)
+    let result = await http.get("/list");
+    this.goodsList=result.slice(0,4);
   },
   components: {
     GoodsIt,
@@ -90,55 +86,8 @@ export default {
    .banner 
       
       height 3rem
-      background yellowgreen
-      margin-bottom .1rem
-
-   .list 
-        flex 1
-        background #eee
-        overflow-y scroll
-        height 60%
-        li 
-          display flex
-          flex-direction row
-          height 50%
-          padding .2rem .15rem
-          margin-bottom .05rem
-          background #fff
-          .left-img
-              width 40%
-              background red
-              margin-right .15rem
-          .right-text
-              width 60%
-              p:nth-of-type(1) 
-                  font-size 0.16rem
-                  margin 0.1rem
-              
-              p:nth-of-type(2) 
-                  font-size 0.12rem
-                  color #666
-                  margin-top: 0.02rem
-              
-
-              span 
-                  font-size 0.14rem
-                  font-weight bold
-                  margin-top 0.16rem
-                  display block
-              
-
-              div 
-                  height 0.25rem
-                  width 0.7rem
-                  background #daa778
-                  border-radius 0.06rem
-                  color #fff
-                  font-size 0.1rem
-                  text-align center // 居中对齐
-                  line-height 0.25rem
-                  margin-top 0.13rem
-
+      
+    
    
 </style>
 <style lang="css">
