@@ -37,13 +37,6 @@ const routes = [{
                 component: Happy
             },
             {
-                path: "factory",
-                name: "factory",
-                component: () =>
-                    import ( /*webpackChunkName:"factory"*/ '@v/variety/factory/factory.vue'),
-
-            },
-            {
                 path: "order",
                 name: "order",
                 component: () =>
@@ -90,6 +83,13 @@ const routes = [{
         name: "heytealabor",
         component: () =>
             import ( /*webpackChunkName:"heytealabor"*/ '@v/variety/heytealabor/HeyTeaLabor.vue'),
+    },
+    {
+        path: "/factory",
+        name: "factory",
+        component: () =>
+            import ( /*webpackChunkName:"factory"*/ '@v/variety/factory/factory.vue'),
+
     },
     {
         path: "/soularound",

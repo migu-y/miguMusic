@@ -5,7 +5,7 @@
                 <i>&#xe600;</i>
             </van-icon>
         </div>
-        <div class="showBag">
+        <div class="showBag" v-show="show">
             <div class="header">
                 <label for="all"><input type="checkbox" id="all"> 全选</label>
                 <p class="clear"><i class="iconfont icon-qingkonggouwuche"></i>
@@ -75,7 +75,7 @@
             <div class="checkout">
                 <div class="checkout-left">
                     <p class="price">¥68</p>
-                    <p class="expressPrice">另需运费¥68(以结算为准)</p>
+                    <p class="expressPrice">另需运费 ¥ 12 (以结算为准)</p>
                 </div>
                 <div class="checkout-right">
                         结算
@@ -103,7 +103,7 @@ export default {
   },
   methods:{
       showBag(){
-
+          this.show = !this.show
       }
   }
 }
@@ -139,7 +139,6 @@ export default {
         border-top-left-radius 0.2rem
         border-top-right-radius 0.2rem
         margin-top 0.1rem
-        padding 0 0.2rem
         .header 
             height 0.4rem
             line-height 0.4rem
@@ -147,11 +146,13 @@ export default {
             align-items center
             justify-content space-between
             border_1px(0 0 1px 0)
+            padding 0 0.2rem
             .clear 
                 color #ccc
         .variety
             height 3rem
             overflow-y scroll
+            padding 0 0.2rem
             .from 
                 display flex 
                 height 0.4rem
@@ -193,13 +194,25 @@ export default {
                             justify-content space-between
         .checkout 
             display flex
+            flex 1
             justify-content space-between
+            align-items center
+            padding-left 0.2rem
             .checkout-left 
                 display flex 
                 flex-direction column
+                .price 
+                    font-size 0.16rem
+                    font-weight bold 
+                .expressPrice 
+                     font-size 0.11rem
+                     color #666
             .checkout-right 
                 width 1rem
-                height 100%
+                height 0.42rem
+                line-height 0.42rem
+                text-align center
+                font-size 0.18rem
                 background-color  #cfaa79
                 color #fff
             
