@@ -30,13 +30,6 @@ const routes = [{
                 component: () =>
                     import ( /*webpackChunkName:"variety"*/ '@v/variety/Variety.vue'),
             },
-            {
-                path: "heytealabor",
-                name: "heytealabor",
-                component: () =>
-                    import ( /*webpackChunkName:"heytealabor"*/ '@v/variety/heytealabor/HeyTeaLabor.vue'),
-            },
-
 
             {
                 path: '/happy',
@@ -91,6 +84,12 @@ const routes = [{
         name: "enterprise",
         component: () =>
             import ( /*webpackChunkName:"enterprise"*/ '@v/home/Enterprise.vue')
+    },
+    {
+        path: "/heytealabor",
+        name: "heytealabor",
+        component: () =>
+            import ( /*webpackChunkName:"heytealabor"*/ '@v/variety/heytealabor/HeyTeaLabor.vue'),
     },
     {
         path: "/soularound",
