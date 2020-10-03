@@ -28,6 +28,7 @@
           </li>
       </ul>
     </div>
+     <shop-bag></shop-bag>
   </div>
 </template>
 
@@ -35,6 +36,7 @@
 import http from '@u/http'
 import GoodsItem from "@c/GoodsItem.vue";
 import GoodsDetail from "@c/GoodsDetails.vue"
+import ShopBag from "@c/ShopBag"
 
 import Vue from 'vue';
 import { Popup,Cell } from 'vant';
@@ -54,7 +56,8 @@ export default {
     },
   components: {
     GoodsItem,
-    GoodsDetail
+    GoodsDetail,
+    ShopBag
   },
   methods:{
       handleCityClick() {

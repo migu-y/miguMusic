@@ -102,6 +102,7 @@
       </van-list>
      
     </div>
+    <shop-bag></shop-bag>
   </div>
 </template>
 
@@ -117,7 +118,7 @@ Vue.use(Tabbar);
 Vue.use(TabbarItem);
 
 import http from '@u/http'
-
+import ShopBag from "@c/ShopBag"
 
 export default {
     data(){
@@ -164,7 +165,9 @@ export default {
     mounted(){
     //  this.loadData()
     },
-    
+     components:{
+          ShopBag
+      },
     methods:{
       async loadData() {
       let result = await http.get('/list'+this.page)
@@ -193,7 +196,7 @@ export default {
 
       onLoad(){
         this.loadData()
-      }
+      },
     }
 
 }

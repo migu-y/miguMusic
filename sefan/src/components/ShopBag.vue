@@ -1,12 +1,18 @@
 <template>
     <div class="shopBag" >
-        <div class="shopWrap">
+        <div class="shopWrap" @click="showShopBag">
             <van-icon class="shopIcon" class-prefix="my-icon" name="extra" badge="9" v-model="showShopBag">
-            <i>&#xe600;</i>
-        </van-icon>
+                <i>&#xe600;</i>
+            </van-icon>
         </div>
         <div class="showShopBag">
-            
+            <div class="header">
+                <label for="all"><input type="checkbox" id="all"> 全选</label>
+                <p class="clear">清空购物袋</p>
+            </div>
+            <ul class="cartList">
+                <li></li>
+            </ul>
         </div>
     </div>
    
@@ -23,12 +29,18 @@ export default {
           showShopBag:false,
           show:false
       }
+  },
+  methods:{
+      showShopBag(){
+
+      }
   }
 }
 </script>
 
 
 <style scoped lang="stylus">
+@import "~@a/stylus/border.styl"
 .shopBag
     position fixed 
     width 100%
@@ -46,6 +58,23 @@ export default {
             border-radius 0.6rem
             i 
                 font-size 0.3rem
+    .showShopBag 
+        display flex
+        flex-direction column
+        padding 0 0.2rem
+        background-color #fff
+        border-radius 0.5rem
+        border_1px(0 0 1px 0)
+        .header 
+            height 0.4rem
+            line-height 0.4rem
+            display flex
+            align-items center
+            justify-content space-between
+            .clear 
+                color #ccc
+
+            
 </style>
 <style lang="css">
 .van-info {
