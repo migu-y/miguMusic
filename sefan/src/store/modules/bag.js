@@ -1,24 +1,25 @@
 import bagDate from '../../api/bag'
 
-const state={
-    bags:[]
+const state = {
+    bags: [],
+    show: false
 }
 
 const mutations = {
-    setItems(state,data) {
-        state.bags=data
+    setItems(state, data) {
+        state.bags = data
     }
 }
 
 const actions = {
-    async loadBags({commit}){
+    async loadBags({ commit }) {
         let result = await bagDate()
-        commit('setItems',result)
+        commit('setItems', result)
     }
 }
 
 export default {
-    namespaced:true,
+    namespaced: true,
     state,
     actions,
     mutations

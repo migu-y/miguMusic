@@ -5,18 +5,18 @@
             商品详情
         </header>
         <div class="swiper">
-            <!-- <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-                <van-swipe-item v-for="item in swipeList" :key="item.id"><img :src="item.imageUrl" alt=""></van-swipe-item>
-            </van-swipe> -->
+            <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+                <van-swipe-item v-for="(item,index) in goods.materialUrls" :key="index"><img :src="item" alt=""></van-swipe-item>
+            </van-swipe>
         </div>
         <main>  
             <ul class="detail">
                 <li>
-                    <span>¥ {{(goods.salePrice/100).toFixed(2)}}</span>
-                    <span>{{goods.itemSalesVolume}}人已购买</span>
+                    <span>¥ {{(goods.wxItem.salePrice/100).toFixed(2)}}</span>
+                    <span>{{goods.wxItem.itemSalesVolume}}人已购买</span>
                 </li>
-                <li>{{goods.name}}</li>
-                <li>{{goods.subName}}</li>
+                <li>{{goods.wxItem.name}}</li>
+                <li>{{goods.wxItem.subName}}</li>
             </ul>
             <div class="expressInfo">
                 <div class="brand">
@@ -50,10 +50,11 @@
                 </p>
             </div>
             <ul>
-                <li @click="handleAddCart">加入购物车</li>
+                <li @click="handleAddCart(goods)">加入购物车</li>
                 <li>立即购买</li>
             </ul>
         </footer>
+        <shop-bag></shop-bag>
     </div>
 </template>
 
@@ -62,44 +63,29 @@ import Vue from 'vue';
 import { AddressEdit } from 'vant';
 import { Toast } from 'vant';
 Vue.use(AddressEdit);
-
+import ShopBag from "@c/ShopBag"
 
 export default {
-    props:["goods"],
     data() {
         return {
-        //   areaList,
-        //   searchResult: [],
+            goods:this.$router.history.current.params
         };
     },
+    
     methods: {
-        onSave() {
-        Toast('save');
-        },
-        onDelete() {
-        Toast('delete');
-        },
-        onChangeDetail(val) {
-        //   if (val) {
-        //     this.searchResult = [
-        //       {
-        //         name: '黄龙万科中心',
-        //         address: '杭州市西湖区',
-        //       },
-        //     ];
-        //   } else {
-        //     this.searchResult = [];
-        //   }
-        },
+       
         handleClick(){
-            this.$router.push("/variety")
+            this.$router.back()
         },
-        handleAddCart(){
-            this.$router.push("/shopbagdialog")
-        }
+        handleAddCart(goods){
+            this.$router.push({ name: 'shopbagdialog', params: goods})
+        },
     },
     mounted(){
-        // console.log(this.goods)
+    //    console.log(this.$router.history.current.params)
+    },
+    components:{
+        ShopBag
     }
 };
 </script>
@@ -126,7 +112,9 @@ export default {
             top 0.03rem
     .swiper
         height 3.75rem
-        background-color pink
+        img 
+            width 100%
+            height 100%
     main 
         flex 1
         background-color #f6f6f6
@@ -137,8 +125,8 @@ export default {
             li 
                 display flex
             li:first-child 
-                height 0.7rem
-                line-height 0.7rem
+                height .4rem
+                line-height .4rem
                 display flex
                 justify-content space-between
                 span:first-child 

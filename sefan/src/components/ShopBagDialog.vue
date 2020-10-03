@@ -2,20 +2,20 @@
     <div class="wrap">
         <ul class="detail">
             <li class="itemImg">
-                <img src="@a/item.jpg" alt="">
+                <img :src="goodsItem.wxItem.thumbnail" alt="">
             </li>
             <li>
                 <ul>
-                    <li>【葡萄味】喜小茶零糖气泡水 单口味12瓶/箱</li>
-                    <li>规格为12瓶一箱哦~</li>
-                    <li>¥ 66.00</li>
+                    <li>{{goodsItem.wxItem.name}}</li>
+                    <li>{{goodsItem.wxItem.subName}}</li>
+                    <li>¥ {{(goodsItem.wxItem.salePrice/100).toFixed(2)}}</li>
                 </ul>
             </li>
             <i class="iconfont icon-roundclosefill" @click="handleCancleClick"></i>
         </ul>
         <div class="count">
-            <p>口味</p>
-            <p>葡萄味 (410ml*12瓶)</p>
+            <p>{{goodsItem.skuInfoList[0].skuInfoNames[0]['keyName']}}</p>
+            <p>{{goodsItem.skuInfoList[0].skuInfoNames[0]['valName']}}</p>
         </div>
         <div class="step">
             <span>购买数量</span>
@@ -23,7 +23,8 @@
                 <van-stepper v-model="value" theme="round" button-size="22" disable-input />
             </span>
         </div>
-        <p class="confirm">确定</p>
+        <p class="confirm" >确定</p>
+        
     </div>
    
 </template>
@@ -38,13 +39,17 @@ export default {
  data() {
     return {
       value: 1,
+      goodsItem:this.$router.history.current.params
     };
   },
   methods:{
       handleCancleClick(){
-          this.$router.back()
+          this.$router.push("/heytealabor")
       }
-  }
+  },
+  mounted(){
+  },
+ 
 }
 </script>
 
@@ -136,9 +141,9 @@ export default {
     background-color: #cfaa79;
 }
 .van-stepper--round .van-stepper__minus {
-    color: #c2c2c2;
+    color: #898989;;
     background-color: #fff;
-    border: 1px solid #c2c2c2;
+    border: 1px solid #898989;;
 }
 
 </style>

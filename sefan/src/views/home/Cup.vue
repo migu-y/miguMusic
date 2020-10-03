@@ -26,6 +26,7 @@ import {mapState,mapActions} from 'vuex'
 
         mounted(){
             this.loadCups();
+            // console.log(this.$route.path)
             // console.log(this.cups);
         }
     }

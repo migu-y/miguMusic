@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <van-nav-bar
-  title="商品详情"
+  title="商品详"
 
   left-text=""
  

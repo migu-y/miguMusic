@@ -17,8 +17,8 @@
     </div>
 
     <div class="main">
-        <van-tabs v-model="active" line-width='.6rem' color='rgb(227,188,145)' title-active-color='rgb(227,188,145)' duration='0'>
-          <van-tab title="杯类产品" to='/soularound/cup'></van-tab>
+        <van-tabs v-model="num" line-width='.6rem' color='rgb(227,188,145)' title-active-color='rgb(227,188,145)' duration='0'>
+          <van-tab title="杯类产品" to='cup'></van-tab>
           <van-tab title="包袋类" to='bag'></van-tab>
           <van-tab title="手机壳" to='phoneke'></van-tab>
           <van-tab title="其他周边" to='others'></van-tab>
@@ -52,7 +52,8 @@ Vue.use(NavBar)
     data() {
       return {
         active :0,
-        activeSort:0
+        activeSort:0,
+        num:0
       };
     },
 
@@ -61,10 +62,17 @@ Vue.use(NavBar)
       this.$router.push("/variety")
     },
 
-    mounted(){
-      console.log('1')
-    }
-  },
+    },
+  mounted(){
+      let path=this.$route.path
+      path=path.slice(12)
+      console.log(path);
+      if(path==='cup') this.num=0
+      else if(path==='bag') this.num=1
+      else if(path==='phoneke') this.num=2
+      else if(path==='others') this.num=3
+    },
+
   }
 </script>
 

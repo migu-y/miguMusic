@@ -102,18 +102,7 @@
       </van-list>
      
     </div>
-    
-    <!-- <footer>
-    <van-tabbar v-model="active">
-    <van-tabbar-item icon="search">首页</van-tabbar-item>
-    <van-tabbar-item icon="search">标签</van-tabbar-item>
-    <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-    <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
-    <van-tabbar-item icon="icon-xiazai4">标签</van-tabbar-item>
-</van-tabbar>
-    </footer> -->
-
-   
+    <shop-bag></shop-bag>
   </div>
 </template>
 
@@ -129,7 +118,7 @@ Vue.use(Tabbar);
 Vue.use(TabbarItem);
 
 import http from '@u/http'
-
+import ShopBag from "@c/ShopBag"
 
 export default {
     data(){
@@ -176,7 +165,9 @@ export default {
     mounted(){
     //  this.loadData()
     },
-    
+     components:{
+          ShopBag
+      },
     methods:{
       async loadData() {
       let result = await http.get('/list'+this.page)
@@ -205,7 +196,7 @@ export default {
 
       onLoad(){
         this.loadData()
-      }
+      },
     }
 
 }
@@ -230,7 +221,6 @@ export default {
     font-size 0.16rem
     font-weight 600
   .main
-   
     flex 1
     overflow-y scroll
     .carousel
