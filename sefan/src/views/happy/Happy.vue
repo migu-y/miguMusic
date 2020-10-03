@@ -38,7 +38,7 @@ export default {
     },
   },
   async mounted(){
-      let result = await http.get('/soul/around')
+      let result = await http.get('/around')
       this.aroundList = result;
     //   console.log(this.aroundList)
   }

@@ -37,7 +37,7 @@ const routes = [{
             {
                 path: "soularound",
                 name: "soularound",
-                redirect: "/soularound/cup",
+                redirect: "/cup",
                 component: () =>
                     import ( /*webpackChunkName:"soularound"*/ '@v/variety/soulAround/SoulAround.vue'),
                 children: [{

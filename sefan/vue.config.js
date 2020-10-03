@@ -27,12 +27,12 @@ module.exports = {
                 target: "http://localhost:9000",
                 changeOrigin: true,
             },
-            '/soul': {
+            '/around': {
                 target: 'http://localhost:9000',
                 changeOrigin: true,
-                pathRewrite: {
-                    '^/soul': '' // /api/mmdb/movie/v2/list/hot.json -> /mmdb/movie/v2/list/hot.json
-                }
+                // pathRewrite: {
+                //     '^/soul': '' // /api/mmdb/movie/v2/list/hot.json -> /mmdb/movie/v2/list/hot.json
+                // }
             }
         },
         // chainWebpack(config) {
