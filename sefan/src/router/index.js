@@ -36,38 +36,7 @@ const routes = [{
                 component: () =>
                     import ( /*webpackChunkName:"heytealabor"*/ '@v/variety/heytealabor/HeyTeaLabor.vue'),
             },
-            {
-                path: "soularound",
-                name: "soularound",
-                redirect: "/soularound/cup",
-                component: () =>
-                    import ( /*webpackChunkName:"soularound"*/ '@v/variety/soulAround/SoulAround.vue'),
-                children: [{
-                        path: 'cup',
-                        name: 'cup',
-                        component: () =>
-                            import ( /*webpackChunkName:"cup"*/ '@v/home/Cup.vue'),
-                    },
-                    {
-                        path: 'bag',
-                        name: 'bag',
-                        component: () =>
-                            import ( /*webpackChunkName:"bag"*/ '@v/home/Bag.vue'),
-                    },
-                    {
-                        path: 'phoneke',
-                        name: 'phoneke',
-                        component: () =>
-                            import ( /*webpackChunkName:"phoneke"*/ '@v/home/PhoneKe.vue')
-                    },
-                    {
-                        path: 'others',
-                        name: 'others',
-                        component: () =>
-                            import ( /*webpackChunkName:"others"*/ '@v/home/Others.vue')
-                    },
-                ]
-            },
+
 
             {
                 path: '/happy',
@@ -122,7 +91,39 @@ const routes = [{
         name: "enterprise",
         component: () =>
             import ( /*webpackChunkName:"enterprise"*/ '@v/home/Enterprise.vue')
-    }
+    },
+    {
+        path: "/soularound",
+        name: "soularound",
+        redirect: "/soularound/cup",
+        component: () =>
+            import ( /*webpackChunkName:"soularound"*/ '@v/variety/soulAround/SoulAround.vue'),
+        children: [{
+                path: 'cup',
+                name: 'cup',
+                component: () =>
+                    import ( /*webpackChunkName:"cup"*/ '@v/home/Cup.vue'),
+            },
+            {
+                path: 'bag',
+                name: 'bag',
+                component: () =>
+                    import ( /*webpackChunkName:"bag"*/ '@v/home/Bag.vue'),
+            },
+            {
+                path: 'phoneke',
+                name: 'phoneke',
+                component: () =>
+                    import ( /*webpackChunkName:"phoneke"*/ '@v/home/PhoneKe.vue')
+            },
+            {
+                path: 'others',
+                name: 'others',
+                component: () =>
+                    import ( /*webpackChunkName:"others"*/ '@v/home/Others.vue')
+            },
+        ]
+    },
 ]
 
 const router = new VueRouter({

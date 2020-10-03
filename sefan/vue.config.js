@@ -27,7 +27,7 @@ module.exports = {
                 target: "http://localhost:9000",
                 changeOrigin: true,
             },
-            '/soul': {
+            '/around': {
                 target: 'http://localhost:9000',
                 changeOrigin: true,
                 pathRewrite: {
