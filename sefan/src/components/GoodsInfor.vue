@@ -72,7 +72,13 @@ import Vue from "vue";
 import { Swipe, SwipeItem } from "vant";
 Vue.use(Swipe);
 Vue.use(SwipeItem);
-export default {};
+export default {
+  data(){
+    return {
+      swipeList:[]
+    }
+  }
+};
 </script>
 
 <style lang='stylus' scoped>
