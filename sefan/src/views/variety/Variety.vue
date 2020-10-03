@@ -102,18 +102,6 @@
       </van-list>
      
     </div>
-    
-    <!-- <footer>
-    <van-tabbar v-model="active">
-    <van-tabbar-item icon="search">首页</van-tabbar-item>
-    <van-tabbar-item icon="search">标签</van-tabbar-item>
-    <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-    <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
-    <van-tabbar-item icon="icon-xiazai4">标签</van-tabbar-item>
-</van-tabbar>
-    </footer> -->
-
-   
   </div>
 </template>
 
@@ -230,7 +218,6 @@ export default {
     font-size 0.16rem
     font-weight 600
   .main
-   
     flex 1
     overflow-y scroll
     .carousel

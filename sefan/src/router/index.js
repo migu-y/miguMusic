@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 import Home from "@v/home/Home";
+import LaborDetails from "@c/GoodsDetails.vue"
 import Happy from '@v/happy/Happy.vue'
 import Details from '@v/details/Details.vue'
 import Talk from "@v/order/Talk.vue"
@@ -92,13 +93,19 @@ const routes = [{
                 component: () =>
                     import ( /*webpackChunkName:"profile"*/ '@v/profile/Profile.vue')
             },
-            {
-                path: "shopbagdialog",
-                name: "shopbagdialog",
-                component: () =>
-                    import ( /*webpackChunkName:"shopbagdialog"*/ '@c/ShopBagDialog.vue')
-            },
+
         ]
+    },
+    {
+        path: '/laborDetails',
+        name: 'laborDetails',
+        component: LaborDetails
+    },
+    {
+        path: "shopbagdialog",
+        name: "shopbagdialog",
+        component: () =>
+            import ( /*webpackChunkName:"shopbagdialog"*/ '@c/ShopBagDialog.vue')
     },
     {
         path: '/details',
@@ -110,6 +117,12 @@ const routes = [{
         name: 'talk',
         component: Talk
     },
+    {
+        path: "/enterprise",
+        name: "enterprise",
+        component: () =>
+            import ( /*webpackChunkName:"enterprise"*/ '@v/home/Enterprise.vue')
+    }
 ]
 
 const router = new VueRouter({

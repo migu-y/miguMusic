@@ -5,14 +5,16 @@
     </header>
     <nav>
       <ul class="orderNav">
-        <van-tabs v-model="active" animated>
-          <van-tab  title="当前订单" :key="1">
-            <current-order></current-order>
-          </van-tab>
-          <van-tab  title="历史订单" :key="2">
-            <history-order></history-order>
-          </van-tab>
-        </van-tabs>
+        <keep-alive>
+            <van-tabs v-model="active" animated>
+              <van-tab  title="当前订单" :key="1">
+              <current-order></current-order>
+              </van-tab>
+              <van-tab  title="历史订单" :key="2">
+                <history-order></history-order>
+              </van-tab>
+            </van-tabs>
+        </keep-alive>
       </ul>
     </nav>
   </div>

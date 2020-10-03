@@ -13,9 +13,6 @@ import {mapState,mapActions} from 'vuex'
         },
 
         computed:{
-            // ...mapState('cup',{
-            //     cups:state => state.cups
-            // })
             ...mapState('bag',['bags'])
         },
 

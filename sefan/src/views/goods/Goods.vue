@@ -403,30 +403,21 @@ export default {
               font-weight bold
               font-size 0.13rem
               line-height 0.46rem
-
-
-            
-
-              
-
-        
-        
-
-
-  footer 
-    height 0.5rem
-    background #f7f7f7
-    ul
-      height 100%
-      display flex
-      flex-direction column
-      justift-content center
-      align-item center
-      i
-        font-size 0.42rem
-        line-height .42rem
-      span 
-        font-size size 0.16rem
-      &.active
-        color #000
+  // footer 
+  //   height 0.5rem
+  //   background #f7f7f7
+  //   ul
+  //     height 100%
+  //     display flex
+  //     flex-direction column
+  //     justift-content center
+  //     align-item center
+  //     i
+  //       font-size 0.42rem
+  //       line-height .42rem
+  //     span 
+  //       font-size size 0.16rem
+  //     &.active
+  //       color #000
 </style>
+

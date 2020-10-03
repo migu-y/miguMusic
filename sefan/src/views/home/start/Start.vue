@@ -26,7 +26,7 @@
                         <i class="iconfont icon-libao1"> 喜茶百货</i>
                         <span>气泡水新升级抢鲜选购</span>
                     </li>
-                    <li>
+                    <li @click="handleEnterpriseClick">
                         <i class="iconfont icon-cup"> 阿喜团餐</i>
                         <span>气泡水新升级抢鲜选购</span>
                     </li>
@@ -75,6 +75,9 @@ export default {
       },
       handleOrderClick(){
           this.$router.push("/reservation")
+      },
+      handleEnterpriseClick(){
+          this.$router.push("/enterprise")
       }
   }
 };

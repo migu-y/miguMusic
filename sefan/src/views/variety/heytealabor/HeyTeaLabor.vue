@@ -23,14 +23,9 @@
     </nav>
     <div class="main">
       <ul class="list">
-            <li v-for="goods in goodsList" :key="goods.id">
-                <van-cell is-link @click="showPopup">
-                    <goods-item :goods="goods" :key="goods.id"></goods-item>
-                </van-cell>
-                <van-popup v-model="show">
-                  <goods-detail :goods="goods" :key="goods.id"></goods-detail>
-                </van-popup>
-            </li>
+          <li v-for="goods in goodsList" :key="goods.wxItem.name" @click="handleClickDetail(goods)">
+              <goods-item :goods="goods.wxItem"></goods-item>
+          </li>
       </ul>
     </div>
   </div>
@@ -55,7 +50,7 @@ export default {
     },
     async mounted(){
         let result =await http.get("/list");
-        this.goodsList = result.data
+        this.goodsList = result
     },
   components: {
     GoodsItem,
@@ -68,6 +63,12 @@ export default {
     showPopup() {
       this.show = true;
     },
+    handleClickDetail(goods){
+      this.$router.push({
+          name:'laborDetails',
+          params:goods
+        })
+    },
   }
 };
 </script>
@@ -79,6 +80,7 @@ export default {
     width 100%
     display flex
     flex-direction column
+    overflow-y scroll
     header 
         height 0.44rem
         background #ffffff
@@ -131,12 +133,12 @@ export default {
     .main 
         flex 1
         background-color #f6f6f6
-        padding .2rem
-        height 100%
+        padding-top .2rem
         .list 
             display flex
             flex-wrap wrap
             height 100%
+            padding-left 0.2rem
             li 
                 margin-bottom .1rem
                 border-radius .1rem
