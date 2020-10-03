@@ -24,7 +24,6 @@
 import http from "@u/http";
 import GoodsIt from "@c/GoodsIt.vue";
 import GoodsInfor from "@c/GoodsInfor.vue";
-import axios from 'axios'
 
 import Vue from "vue";
 import { Popup, Cell } from "vant";
@@ -39,11 +38,8 @@ export default {
     };
   },
   async mounted() {
-    let result = await axios.get("/data/shoplist.json");
-    this.goodsList = JSON.parse(result.data.data)
-    this.goodsList=this.goodsList[2];
-    this.goodsList=this.goodsList.config.data;
-    console.log(this.goodsList)
+    let result = await http.get("/list");
+    this.goodsList=result.slice(0,4);
   },
   components: {
     GoodsIt,

@@ -4,13 +4,13 @@
       <ul class="list"> 
           <li>
               <div class="left-img">
-                <img :src="goods.thumbnail">
+                <img :src="goods.wxItem.thumbnail">
                 <!-- {{goods.describe.filter()}} -->
               </div>
               <div class="right-text">
-                  <p>{{goods.name}}</p>
-                  <p>{{goods.subName}}</p>
-                  <span>￥{{(goods.salePrice/100).toFixed(2)}}</span>
+                  <p>{{goods.wxItem.name}}</p>
+                  <p>{{goods.wxItem.subName}}</p>
+                  <span>￥{{(goods.wxItem.salePrice/100).toFixed(2)}}</span>
                   <div>立即购买</div>
               </div>
           </li>
