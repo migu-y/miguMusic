@@ -1,34 +1,29 @@
 <template>
  <div>
    <div @click='$router.push("/shop")'>←</div>
-   <van-tabs v-model="active">
-    <van-tab title="国家">
-
-    </van-tab>
-    <van-tab title="城市">城市</van-tab>
-    <van-tab title="地区">地区</van-tab>
-   </van-tabs>
+   <ul>
+    <router-link to='/cout' tag='li'>国家</router-link>
+    <router-link to='/citys' tag='li'>城市</router-link>
+    <router-link to='/dist' tag='li'>地区</router-link>
+   </ul>
+    <router-view></router-view>
  </div>
 </template>
 <script>
-import Vue from 'vue'
-import { Tab, Tabs } from 'vant'
 
 import { mapState } from 'vuex'
 
-Vue.use(Tab);
-Vue.use(Tabs);
+
 export default {
    data() {
     return {
-      active: 0
     }
   },
   computed:{
     ...mapState(['data']),
-    location(){
+    citys(){
       console.log(this.data.location);
-      return this.data.location
+      return this.data.location.city
     }
   },
   mounted(){

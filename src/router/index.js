@@ -32,7 +32,24 @@ const routes = [
   {
     path: '/city',
     name: 'city',
-    component: () => import(/* webpackChunkName: "cityPicker" */ '@v/CityPicker')
+    component: () => import(/* webpackChunkName: "cityPicker" */ '@v/city/CityPicker'),
+    children:[
+      {
+        path:'/cout',
+        name:'cout',
+        component:()=> import(/* webpackChunkName: "Country" */ '@v/city/Country')
+      },
+      {
+        path:'/citys',
+        name:'citys',
+        component:()=> import(/* webpackChunkName: "Citys" */ '@v/city/Citys')
+      },
+      {
+        path:'/dist',
+        name:'dist',
+        component:()=> import(/* webpackChunkName: "Dist" */ '@v/city/Dist')
+      }
+    ]
   },
   {
     path: '/a',
