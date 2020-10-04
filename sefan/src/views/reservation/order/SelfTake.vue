@@ -74,7 +74,7 @@
          if(this.bool){
            this.more={ path:'/more',value:'更多'}
          }else{
-            this.more={ path:'/list',value:'收起'}
+            this.more={ path:'/lists',value:'收起'}
          }
          this.bool=!this.bool
       },

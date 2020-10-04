@@ -33,7 +33,7 @@ export default {
   },
   methods:{
     handleClick(){
-      this.$router.push('/list')
+      this.$router.push('/lists')
     }
   },
   computed:{
