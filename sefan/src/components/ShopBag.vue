@@ -115,8 +115,7 @@ export default {
 .shopBag
     position fixed 
     width 100%
-    bottom 0
-    
+    bottom 0.5rem
     .shopWrap
         padding 0 0.2rem
         .shopIcon 
