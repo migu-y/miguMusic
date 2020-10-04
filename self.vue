@@ -1,6 +1,12 @@
 <template>
  <div>
     个人中心
+    我的
+    ***
+    *
+    ***
+    *
+    *
  </div>
 </template>
  
