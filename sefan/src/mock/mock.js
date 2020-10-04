@@ -4,6 +4,8 @@ const list3 = require('./list3.json')
 const list = require("./list.json")
 const shoplist = require("./shoplist.json")
 const around = require('./around.json')
+const items = require('./items.json')
+
 module.exports = function() {
     return {
         list,
@@ -11,6 +13,7 @@ module.exports = function() {
         list1,
         list3,
         around,
-        shoplist
+        shoplist,
+        items
     }
 }

@@ -33,6 +33,17 @@ module.exports = {
                 pathRewrite: {
                     '^/soul': ''
                 }
+            },
+            '/api': {
+                target: "https://go.heytea.com",
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/api': ''
+                }
+            },
+            '/items': {
+                target: 'http://localhost:9000',
+                changeOrigin: true,
             }
         },
     }
