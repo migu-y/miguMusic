@@ -23,7 +23,7 @@
                 <van-stepper v-model="value" theme="round" button-size="22" disable-input />
             </span>
         </div>
-        <p class="confirm" >确定</p>
+        <p class="confirm" @click="handleAddCart(goodsItem)">确定</p>
         
     </div>
    
@@ -45,6 +45,9 @@ export default {
   methods:{
       handleCancleClick(){
           this.$router.push("/heytealabor")
+      },
+      handleAddCart(goodsItem){
+          console.log(goodsItem)
       }
   },
   mounted(){
