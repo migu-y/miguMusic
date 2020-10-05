@@ -145,6 +145,12 @@ const routes = [{
             import ( /*webpackChunkName:"heytealabor"*/ '@v/variety/heytealabor/HeyTeaLabor.vue'),
     },
     {
+        path: "/checkout",
+        name: "checkout",
+        component: () =>
+            import ( /*webpackChunkName:"checkout"*/ '@c/Checkout.vue'),
+    },
+    {
         path: "/factory",
         name: "factory",
         component: () =>

@@ -23,7 +23,7 @@
                 <van-stepper v-model="value" theme="round" button-size="22" disable-input />
             </span>
         </div>
-        <p class="confirm" @click="handleAddCart(goodsItem)">确定</p>
+        <p class="confirm" @click="addToCart(goodsItem.wxItem)" @hidden="handleHiddenClick">确定</p>
         
     </div>
    
@@ -32,24 +32,25 @@
 <script>
 import Vue from 'vue';
 import { Stepper } from 'vant';
-
+import {mapState,mapActions} from "vuex"
 Vue.use(Stepper);
 
 export default {
  data() {
     return {
       value: 1,
-      goodsItem:this.$router.history.current.params
+      goodsItem:this.$router.history.current.params,
     };
   },
   methods:{
       handleCancleClick(){
           this.$router.push("/heytealabor")
       },
-      handleAddCart(goodsItem){
-          console.log(goodsItem)
-          this.$router.back();
-      }
+       handleHiddenClick(){
+       this.$router.back()
+   },
+      ...mapActions("cart",["addToCart"]),
+  
   },
   mounted(){
   },

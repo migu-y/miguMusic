@@ -9,6 +9,8 @@ import others from './modules/others'
 import phoneke from './modules/phoneke'
 import shopCollect from './modules/shopCollect'
 import shopList from './modules/shopList'
+import product from './modules/products'
+import cart from './modules/cart'
 
 export default new Vuex.Store({
     state: {
@@ -30,6 +32,8 @@ export default new Vuex.Store({
         others,
         phoneke,
         shopCollect,
-        shopList
+        shopList,
+        product,
+        cart
     }
 })
