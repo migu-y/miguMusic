@@ -50,10 +50,13 @@
                 </p>
             </div>
             <ul>
-                <li @click="handleAddCart(goods)">加入购物车</li>
+                <li @click="showPopup">加入购物车</li>
                 <li>立即购买</li>
             </ul>
         </footer>
+        <van-popup v-model="show" closeable round>
+            <ShopBagDialog :goodsItem='goods'></ShopBagDialog>
+        </van-popup>
         <shop-bag></shop-bag>
     </div>
 </template>
@@ -62,12 +65,15 @@
 import Vue from 'vue';
 import { AddressEdit } from 'vant';
 import { Toast } from 'vant';
-Vue.use(AddressEdit);
+import ShopBagDialog from "@c/ShopBagDialog"
 import ShopBag from "@c/ShopBag"
+Vue.use(AddressEdit);
+
 
 export default {
     data() {
         return {
+            show:false,
             goods:this.$router.history.current.params
         };
     },
@@ -77,15 +83,19 @@ export default {
         handleClick(){
             this.$router.back()
         },
-        handleAddCart(goods){
-            this.$router.push({ name: 'shopbagdialog', params: goods})
-        },
+        // handleAddCart(goods){
+        //     this.$router.push({ name: 'shopbagdialog', params: goods})
+        // },
+        showPopup(){
+            this.show = true;
+        }
     },
     mounted(){
     //    console.log(this.$router.history.current.params)
     },
     components:{
-        ShopBag
+        ShopBag,
+        ShopBagDialog
     }
 };
 </script>

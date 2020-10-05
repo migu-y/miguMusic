@@ -11,7 +11,7 @@
                     <li>¥ {{(goodsItem.wxItem.salePrice/100).toFixed(2)}}</li>
                 </ul>
             </li>
-            <i class="iconfont icon-roundclosefill" @click="handleCancleClick"></i>
+            <!-- <i class="iconfont icon-roundclosefill" @click="handleCancleClick"></i> -->
         </ul>
         <div class="count">
             <p>{{goodsItem.skuInfoList[0].skuInfoNames[0]['keyName']}}</p>
@@ -23,7 +23,7 @@
                 <van-stepper v-model="value" theme="round" button-size="22" disable-input />
             </span>
         </div>
-        <p class="confirm" @click="addToCart(goodsItem.wxItem)" @hidden="handleHiddenClick">确定</p>
+        <p class="confirm" @click="addToCart(goodsItem.wxItem);handleHiddenClick" >确定</p>
         
     </div>
    
@@ -36,20 +36,22 @@ import {mapState,mapActions} from "vuex"
 Vue.use(Stepper);
 
 export default {
+    props:["goodsItem"],
  data() {
     return {
       value: 1,
-      goodsItem:this.$router.history.current.params,
+    //   goodsItem:this.$router.history.current.params,
     };
   },
   methods:{
-      handleCancleClick(){
-          this.$router.push("/heytealabor")
-      },
-       handleHiddenClick(){
-       this.$router.back()
+    //   handleCancleClick(){
+    //       this.$router.push("/heytealabor")
+    //   },
+    handleHiddenClick(){
+        console.log(666)
+        // this.$router.push("/shopbag")
    },
-      ...mapActions("cart",["addToCart"]),
+    ...mapActions("cart",["addToCart"]),
   
   },
   mounted(){
@@ -61,21 +63,19 @@ export default {
 
 <style scoped lang="stylus">
 .wrap      
-    width 5rem
-    height 6.9rem
+    width 3.5rem
+    height 5rem
     border-radius 0.2rem
     background-color #fff
     padding-left 0.3rem
-    padding-right 0.3rem
     .detail 
         display flex
         position relative
         height 1.9rem
         padding 0.22rem 0
         .itemImg 
-            width 1.14rem
-            height 1.4rem
-            margin-right 0.32rem
+            width 45%
+            margin-right 0.1rem
             img 
                 width 100%
                 height 100%
@@ -123,7 +123,7 @@ export default {
         height 0.36rem
         line-height 0.36rem
         display flex
-        padding-bottom  1.6rem
+        padding-bottom  0.6rem
         span 
             height 0.36rem
             line-height 0.36rem
@@ -132,7 +132,7 @@ export default {
             font-size 0.16rem
             padding-right 1.45rem
     .confirm
-        width 3rem
+        width 2.9rem
         height 0.6rem
         color #ffffff
         line-height 0.6rem

@@ -123,6 +123,12 @@ const routes = [{
             import ( /*webpackChunkName:"shopbagdialog"*/ '@c/ShopBagDialog.vue')
     },
     {
+        path: "/shopbag",
+        name: "shopbag",
+        component: () =>
+            import ( /*webpackChunkName:"shopbag"*/ '@c/ShopBag.vue')
+    },
+    {
         path: '/details',
         name: 'details',
         component: Details

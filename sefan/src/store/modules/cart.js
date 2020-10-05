@@ -21,12 +21,16 @@ const getters = {
                 return sum
             }
         }, 0)
+    },
+    allChecked(state) {
+        return state.items.every(value => {
+            return value.checked == true
+        })
     }
 }
 
 const mutations = {
     setItems(state, product) {
-        console.log(product)
         let { id, thumbnail, name, salePrice } = product
         let p = state.items.find(value => value.id === id)
         if (p) {
@@ -55,7 +59,6 @@ const actions = {
 export default {
     // 命名空间
     namespaced: true,
-
     state,
     mutations,
     actions,

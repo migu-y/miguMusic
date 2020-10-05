@@ -7,7 +7,7 @@
         </div>
         <div class="showBag" v-show="show">
             <div class="header">
-                <label for="all" @click="checkAll"><input type="checkbox" id="all" v-model="allChecked" > 全选</label>
+                <label for="all" @click="checkAll"><input type="checkbox" id="all" v-model="allChecked"> 全选</label>
                 <p class="clear" @click="handleClearBag"><i class="iconfont icon-qingkonggouwuche"></i>
                     清空购物袋</p>
             </div>
@@ -66,14 +66,13 @@ export default {
           showShopBag:false,
           show:false,
           result: [],
-          allChecked:false
       }
   },
   computed:{
       ...mapState('cart', {
       products: 'items'
     }),
-    ...mapGetters('cart', ['total',"count"]),
+    ...mapGetters('cart', ['total',"count","allChecked"]),
   },
   methods:{
       showBag(){
@@ -84,7 +83,6 @@ export default {
       },
        singleChecked(goodsItem){
         goodsItem.checked = !goodsItem.checked
-        if(!goodsItem.checked) this.allChecked = false
     },
       checkAll(event) {
           if(event.target.checked){
@@ -104,7 +102,7 @@ export default {
     }
   },
   mounted(){
-      console.log(this.$store.state.cart)
+    console.log(this.$store.state.cart)
   }
 }
 </script>
