@@ -48,6 +48,7 @@ export default {
       },
       handleAddCart(goodsItem){
           console.log(goodsItem)
+          this.$router.back();
       }
   },
   mounted(){
