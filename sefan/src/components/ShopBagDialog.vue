@@ -44,7 +44,7 @@ export default {
   },
   methods:{
       handleCancleClick(){
-          this.$router.push("/heytealabor")
+          this.$router.back();
       }
   },
   mounted(){

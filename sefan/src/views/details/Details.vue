@@ -41,6 +41,11 @@
             </div>
         </div>
     </div>  
+
+    <van-popup v-model="show" closeable round>
+        <AddGoods :data='info'></AddGoods>
+    </van-popup>
+
     <div class="bottom">
       <van-goods-action>
         <van-goods-action-icon icon="shop-o" text="百货" />
@@ -49,7 +54,8 @@
         <van-goods-action-button
           type="primary"
           text="加入购物袋"
-          color='rgb(66,65,65)'
+          color='rgb(66,65,65)' 
+          @click="showPopup"
         />
         <van-goods-action-button
           type="primary"
@@ -63,8 +69,9 @@
 
 <script>
 import Vue from "vue";
+import AddGoods from './AddGoods';
 import { Swipe, SwipeItem, Lazyload } from "vant";
-import { GoodsAction, GoodsActionIcon, GoodsActionButton } from "vant";
+import { GoodsAction, GoodsActionIcon, GoodsActionButton ,Popup} from "vant";
 
 Vue.use(GoodsAction);
 Vue.use(GoodsActionButton);
@@ -72,22 +79,30 @@ Vue.use(GoodsActionIcon);
 Vue.use(Swipe);
 Vue.use(SwipeItem);
 Vue.use(Lazyload);
+Vue.use(Popup);
 export default {
   data() {
     return {
       images: [],
-      info:{}
+      info:{},
+      show: false,
     };
+  },
+  components:{
+    AddGoods
   },
   methods: {
     onClickLeft() {
       this.$router.back();
     },
+    showPopup(){
+      this.show = true;
+    }
   },
 
   created(){
     this.info = this.$route.params.info;
-    this.images = this.info.materialUrls
+    this.images = this.info.materialUrls;
   },
 
   mounted(){

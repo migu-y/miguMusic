@@ -66,7 +66,7 @@ Vue.use(NavBar)
   mounted(){
       let path=this.$route.path
       path=path.slice(12)
-      console.log(path);
+      // console.log(path);
       if(path==='cup') this.num=0
       else if(path==='bag') this.num=1
       else if(path==='phoneke') this.num=2
