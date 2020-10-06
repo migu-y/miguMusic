@@ -15,12 +15,12 @@
         </van-notice-bar>
       </div>
       <div class="address">
-        <span class="addrIcon">图标</span>
+        <span class="addrIcon iconfont icon-location"></span>
         <p class="addrInfo">
           <span>昌平地铁站A西北口</span>
           <span>由（先生）16478945656</span>
         </p>
-        <span class="rightArrow">向右</span>
+        <span class="rightArrow iconfont icon-xiangyou"></span>
       </div>
       <div class="orderList">
         <ul class="list">
@@ -93,6 +93,7 @@ export default {
     },
     handlePayClick(){
       Toast.success('支付成功');
+     
       // this.$router.push("/order")
     }
   }

@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "5169069",
+      "name": "定位",
+      "font_class": "location",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "8351474",
+      "name": "向右",
+      "font_class": "xiangyou",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
       "icon_id": "4221025",
       "name": "清空购物车",
       "font_class": "qingkonggouwuche",

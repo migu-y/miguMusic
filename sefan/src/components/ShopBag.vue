@@ -53,7 +53,9 @@ import Vue from 'vue';
 import { Icon } from 'vant';
 import { Stepper } from 'vant';
 import { Checkbox, CheckboxGroup } from 'vant';
+import { Toast } from 'vant';
 
+Vue.use(Toast);
 Vue.use(Checkbox);
 Vue.use(CheckboxGroup);
 Vue.use(Stepper);
