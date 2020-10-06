@@ -1,4 +1,4 @@
-const states={
+const state={
   shopList:[]
 }
 
@@ -16,7 +16,7 @@ const actions={
 
 export default {
   namespaced:true,
-  states,
+  state,
   mutations,
   actions
 }

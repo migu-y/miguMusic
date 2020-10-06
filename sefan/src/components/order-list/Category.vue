@@ -1,9 +1,9 @@
 <template>
   <div class='container'>
-    <ul class="category" @scroll="handleScroll">
+    <ul class="category">
       <li v-for='(i,index) in data.categories' :key="i.id" 
       :class="curIndex==index ? 'active' : ''" 
-      @click='handleClick(index,$event)'>
+      @click='handleClick(i.id,index,$event)'>
         <img :src="i.category_image_url" alt="">
         <p>{{i.name}}</p>
         <!-- <span>{{i.label.name}}</span> -->
@@ -12,34 +12,34 @@
   </div>
 </template>
 <script>
+import { mapState,mapActions } from 'vuex'
 export default {
   props:{
     data:{
       type:Object
     },
   },
-  data(){
-    return{
-      curIndex:0
-    }
+
+  computed:{
+    ...mapState('category',{
+      curIndex:state=>state.curIndex
+    }),
   },
   methods:{
-    handleClick(index,e){
-      this.curIndex=index
-      // console.log(e);
+    ...mapActions('category',['change']),
+    handleClick(id,index,e){
+      console.log(id);
+      this.change({index,id})
     },
-    handleScroll(e){
-      console.log(e);
-    }
   },
   mounted(){
-    // console.log(this.curIndex);
+
   }
 }
 </script>
 <style lang='stylus' scoped>
 .container{
-  width .9rem
+  width .92rem
   .category{
     width 100%
     height 4.75rem

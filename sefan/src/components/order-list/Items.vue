@@ -3,7 +3,7 @@
    <!-- <swipe :data='data'></swipe> -->
    <ae></ae>
    <div>
-    <div v-for='c in items' :key='c.id'>
+    <div v-for='c in items' :key='c.id' :class="'i'+c.id">
       <h3>{{c.name}}</h3>
       <ul>
         <li v-for='i in c.products' :key='i.id' class="goods">
@@ -39,7 +39,7 @@
 import Vue from 'vue';
 import { Button } from 'vant';
 
-import { mapState } from 'vuex'
+import { mapState,mapActions } from 'vuex'
 // import Swipe from './Swipe'
 import Ae from '@v/reservation/a'
 
@@ -60,6 +60,8 @@ export default {
   },
    computed:{
     ...mapState(['data']),
+    ...mapState('category',['id']),
+    ...mapState('itemScroll',['scrollTop']),
     items(){
       // return this.data.categories
       if(Object.keys(this.data).length===0) return
@@ -67,9 +69,46 @@ export default {
       return this.data.categories
     },
   },
+  watch:{
+    id(newV,oldV){
+      this.go(newV)
+    }
+  },
+   methods:{
+    ...mapActions('itemScroll',['setScroll']),
+    Scroll(){
+       if(!this.items) return
+       let arr= this.items.reduce((value,item)=>{
+      // console.log(document.querySelector(`.i${item.id}`).offsetTop);
+        let obj={
+          id:item.id,
+          st:document.querySelector(`.i${item.id}`).offsetTop
+        }
+        value.push(obj)
+        return value
+      },[])
+      console.log(arr);
+      this.setScroll(arr)
+    },
+    go(id){
+      if(this.scrollTop.length==0) return
+      let items= document.querySelector('.items')
+      let item=this.scrollTop.find(item=>{
+        return item.id==id
+      })
+      console.log(item);
+      let top=item.st
+      console.log(top);
+      items.scrollTop=top+'px'
+    }
+  },
   mounted(){
-    console.log(JSON.parse(JSON.stringify(this.data)));
-  }
+    // console.log(JSON.parse(JSON.stringify(this.data)));
+    // let st= document.querySelector('.items').scrollTop
+   this.Scroll()
+    
+  },
+ 
 }
 </script>
 <style lang='stylus' scoped>

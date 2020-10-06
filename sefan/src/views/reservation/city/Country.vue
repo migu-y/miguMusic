@@ -1,5 +1,7 @@
 <template>
-  <div>国家</div>
+  <ul>
+    <router-link tag='li' to='/citys'>中国</router-link>
+  </ul>
 </template>
 <script>
 export default {
