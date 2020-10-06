@@ -46,7 +46,6 @@ export default {
     async mounted(){
         let result = await http.get("data/api/service-portal/vip/openapi/home?location=116.289833%2C40.096749&shopId=333")
         this.swipeList = result.data.bannerVos
-        console.log(result)
     }
 }
 </script>
