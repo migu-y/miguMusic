@@ -97,7 +97,7 @@ const routes = [{
                 component: Happy
             },
             {
-                path: "order",
+                path: "/order",
                 name: "order",
                 component: () =>
                     import ( /*webpackChunkName:"order"*/ '@v/order/Order.vue')

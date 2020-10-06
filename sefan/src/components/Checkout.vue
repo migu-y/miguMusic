@@ -24,7 +24,18 @@
       </div>
       <div class="orderList">
         <ul class="list">
-          <li>
+          <li v-for="goods in products" :key="goods.id">
+            <img :src="goods.thumbnail" alt="">
+            <div class="itemInfo">
+              <p class="itemName">{{goods.name}}</p>
+              <p class="itemTaste">口味规格：酥脆海苔味*2</p>
+            </div>
+            <div class="itemTotal">
+              <p>¥{{goods.salePrice/100}}</p>
+              <p>x {{goods.quantity}}</p>
+            </div>
+          </li>
+          <!-- <li>
             <img src="" alt="">
             <div class="itemInfo">
               <p class="itemName">混坚果淡口味盒装 芥末味/海苔味</p>
@@ -34,18 +45,7 @@
               <p>¥ 60</p>
               <p>x 1</p>
             </div>
-          </li>
-          <li>
-            <img src="" alt="">
-            <div class="itemInfo">
-              <p class="itemName">混坚果淡口味盒装 芥末味/海苔味</p>
-              <p class="itemTaste">口味规格：酥脆海苔味*2</p>
-            </div>
-            <div class="itemTotal">
-              <p>¥ 60</p>
-              <p>x 1</p>
-            </div>
-          </li>
+          </li> -->
         </ul>
         <div class="transfer">
           <span>配送方式</span>
@@ -60,13 +60,13 @@
           <span>如需备注请输入</span>
         </div>
         <div class="total">
-          共<span class="count">2</span>件商品,小计 <p class="totalPrice"> ¥ 128</p>
+          共<span class="count">{{count}}</span>件商品,小计 <p class="totalPrice"> ¥ {{total}}</p>
         </div>
       </div>
     </div>
     <footer>
-      <div class="price">合计 ¥ 128</div>
-      <div class="btnTotal">支付</div>
+      <div class="price">合计 ¥ {{total}}</div>
+      <div class="btnTotal" @click="handlePayClick">支付</div>
     </footer>
   </div>
 </template>
@@ -74,13 +74,26 @@
 <script>
 import Vue from 'vue';
 import { NoticeBar } from 'vant';
+import {mapState,mapGetters} from "vuex"
+import { Toast } from 'vant';
 
+Vue.use(Toast);
 Vue.use(NoticeBar);
 
 export default {
+  computed:{
+    ...mapState("cart",{
+        products: 'items'
+    }),
+    ...mapGetters('cart', ['total',"count"]),
+  },
   methods:{
     onClickLeft(){
       this.$router.back()
+    },
+    handlePayClick(){
+      Toast.success('支付成功');
+      // this.$router.push("/order")
     }
   }
 }
@@ -123,11 +136,13 @@ export default {
         margin-top 0.1rem
         background-color #fff
         .list 
-          border_1px(0 0 1px 0)
+          
+          overflow-y scroll
           li 
             display flex 
             height 0.9rem
             padding-top 0.1rem
+            border_1px(0 0 1px 0)
             img 
               width 0.6rem
               height 0.6rem
@@ -206,5 +221,11 @@ export default {
 .van-nav-bar__title{
    font-size: 0.19rem;
    font-weight: 800;
+}
+.van-toast{
+  background-color:#fff
+}
+.van-toast__text{
+  color: green;
 }
 </style>
