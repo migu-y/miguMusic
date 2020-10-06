@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <div class="top">
-    <div @click="topClick">北京市 全部地区></div>
+    <div @click="topClick">{{addr.city}} {{addr.dist}}></div>
     <div class="search"><i></i>搜索</div> 
   </div>
   <div class="map">
@@ -17,6 +17,8 @@
 import Vue from 'vue'
 import ShopList from '@c/shop-list/ShopList'
 
+import { mapState } from 'vuex'
+
 export default {
    data() {
     return {
@@ -24,6 +26,11 @@ export default {
       tag:'收起地图^',
       bool:false
     }
+  },
+  computed:{
+    ...mapState('location',{
+      addr:state=>state.addr
+    })
   },
   methods: {
     tagClick(){

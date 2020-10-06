@@ -9,6 +9,9 @@ import others from './modules/others'
 import phoneke from './modules/phoneke'
 import shopCollect from './modules/shopCollect'
 import shopList from './modules/shopList'
+import location from './modules/location'
+import itemScroll from './modules/itemsScroll'
+import category from './modules/category'
 
 export default new Vuex.Store({
     state: {
@@ -30,6 +33,9 @@ export default new Vuex.Store({
         others,
         phoneke,
         shopCollect,
-        shopList
+        shopList,
+        location,
+        itemScroll,
+        category
     }
 })

@@ -43,6 +43,8 @@
 <script>
   import Vue from 'vue'
   import http from '@u/http'
+
+
   import {Switch} from 'vant'
 
   Vue.use(Switch)
@@ -59,6 +61,7 @@
         }
       }
     },
+    
     mounted(){
       this.loadData()
       
