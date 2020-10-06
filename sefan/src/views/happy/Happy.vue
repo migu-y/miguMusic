@@ -13,6 +13,7 @@
     <div class="main">
         <around :data='aroundList'></around>
     </div>
+    <ShopBag></ShopBag>
   </div>
 </template>
 
@@ -21,6 +22,7 @@ import http from '@u/http.js'
 import Vue from "vue";
 import { NavBar } from "vant";
 import around from '@c/around.vue';
+import ShopBag from "@c/ShopBag"
 Vue.use(NavBar);
 
 export default {
@@ -31,6 +33,7 @@ export default {
     },
   components: {
     around,
+    ShopBag,
   },
   methods: {
     onClickLeft() {
