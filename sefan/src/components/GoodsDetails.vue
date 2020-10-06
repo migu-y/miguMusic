@@ -54,8 +54,8 @@
                 <li>立即购买</li>
             </ul>
         </footer>
-        <van-popup v-model="show" closeable round>
-            <ShopBagDialog :goodsItem='goods'></ShopBagDialog>
+        <van-popup v-model="show" closeable round >
+            <ShopBagDialog :goodsItem='goods' :closeDialog.sync="show"></ShopBagDialog>
         </van-popup>
         <shop-bag></shop-bag>
     </div>
@@ -88,7 +88,7 @@ export default {
         // },
         showPopup(){
             this.show = true;
-        }
+        },
     },
     mounted(){
     //    console.log(this.$router.history.current.params)

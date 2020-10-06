@@ -104,7 +104,7 @@ export default {
     }
   },
   mounted(){
-    console.log(this.$store.state.cart)
+    console.log(this.$store.state.cart.items)
   }
 }
 </script>
