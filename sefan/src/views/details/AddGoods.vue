@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="confirm">
-            <van-button color="rgb(219,168,113)">确定</van-button>
+            <van-button color="rgb(219,168,113)" @click="addToCart(data.wxItem)">确定</van-button>
         </div>
     </div>
 </template>
@@ -33,6 +33,7 @@
 <script>
     import Vue from 'vue';
     import { Stepper, Button } from 'vant';
+    import {mapState,mapActions} from "vuex"
 
     Vue.use(Stepper);
     Vue.use(Button);
@@ -57,13 +58,16 @@
                 this.active=j
                 this.showInfo=this.infoImg[0].treeValList[this.active].imageUrl
                 this.showPrice=this.infoPrice[this.active].salePrice
-            }
+            },
+            ...mapActions("cart",["addToCart"]),
+            
         },
         mounted(){
             this.infoImg=this.data.skuTreeList;
             this.infoPrice=this.data.skuInfoList;
             this.showInfo=this.infoImg[0].treeValList[this.active].imageUrl
             this.showPrice=this.infoPrice[this.active].salePrice
+            console.log(this.data);
         },
         filters:{
             price(value){

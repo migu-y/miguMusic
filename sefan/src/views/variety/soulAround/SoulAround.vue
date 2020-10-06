@@ -36,12 +36,13 @@
     <div class="info_list">
       <router-view></router-view>
     </div>
-    
+    <ShopBag></ShopBag>
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
+import ShopBag from "@c/ShopBag"
 import { NavBar, Toast ,Tab , Tabs } from 'vant';
 
 Vue.use(Tab);
@@ -55,6 +56,9 @@ Vue.use(NavBar)
         activeSort:0,
         num:0
       };
+    },
+    components:{
+      ShopBag,
     },
 
     methods: {

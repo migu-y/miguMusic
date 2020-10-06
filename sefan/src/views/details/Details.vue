@@ -64,12 +64,14 @@
         />
       </van-goods-action>
     </div>
+    <ShopBag></ShopBag>
   </div>
 </template>
 
 <script>
 import Vue from "vue";
 import AddGoods from './AddGoods';
+import ShopBag from "@c/ShopBag"
 import { Swipe, SwipeItem, Lazyload } from "vant";
 import { GoodsAction, GoodsActionIcon, GoodsActionButton ,Popup} from "vant";
 
@@ -89,7 +91,8 @@ export default {
     };
   },
   components:{
-    AddGoods
+    AddGoods,
+    ShopBag,
   },
   methods: {
     onClickLeft() {
