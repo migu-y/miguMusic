@@ -7,29 +7,20 @@
     <div class="banner">
       <img src="https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/e21de8918bda443db9ae60e74a7e2a7d.jpg"/>
     </div>
-          <ul>
-        <li v-for="goods in goodsList" :key="goods.id">
-          <van-cell is-link @click="showpopup">
-            <goods-It :goods="goods"></goods-It>
-          </van-cell>
-          <van-popup v-model="show">
-            <goods-infor :goods="goods"></goods-infor>
-          </van-popup>
+      <ul>
+        <li v-for="goods in goodsList" :key="goods.id" @click="handleClickDetail(goods)">
+            <goods-It :goods="goods" ></goods-It>
         </li>
       </ul>
+      <shop-bag></shop-bag>
     </div>
 </template>
 
 <script>
 import http from "@u/http";
 import GoodsIt from "@c/GoodsIt.vue";
-import GoodsInfor from "@c/GoodsInfor.vue";
+import ShopBag from "@c/ShopBag"
 
-import Vue from "vue";
-import { Popup, Cell } from "vant";
-
-Vue.use(Popup);
-Vue.use(Cell);
 export default {
   data() {
     return {
@@ -43,15 +34,18 @@ export default {
   },
   components: {
     GoodsIt,
-    GoodsInfor,
+    ShopBag
   },
   methods: {
     handleClick() {
       this.$router.push("/variety");
     },
-    showpopup() {
-      this.show = true;
-    },
+    handleClickDetail(goods){
+       this.$router.push({
+          name:'laborDetails',
+          params:goods
+        })
+    }
   },
 };
 </script>

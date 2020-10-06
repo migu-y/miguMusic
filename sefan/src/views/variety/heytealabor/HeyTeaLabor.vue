@@ -28,14 +28,13 @@
           </li>
       </ul>
     </div>
-     <shop-bag></shop-bag>
+    <shop-bag></shop-bag>
   </div>
 </template>
 
 <script>
 import http from '@u/http'
 import GoodsItem from "@c/GoodsItem.vue";
-import GoodsDetail from "@c/GoodsDetails.vue"
 import ShopBag from "@c/ShopBag"
 
 import Vue from 'vue';
@@ -56,7 +55,6 @@ export default {
     },
   components: {
     GoodsItem,
-    GoodsDetail,
     ShopBag
   },
   methods:{

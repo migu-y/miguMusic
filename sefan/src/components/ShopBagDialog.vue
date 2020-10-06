@@ -24,7 +24,6 @@
             </span>
         </div>
         <p class="confirm" @click="addToCart(goodsItem.wxItem);handleHiddenClick()" >确定</p>
-        
     </div>
    
 </template>
