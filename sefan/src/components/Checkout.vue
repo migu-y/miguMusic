@@ -35,17 +35,6 @@
               <p>x {{goods.quantity}}</p>
             </div>
           </li>
-          <!-- <li>
-            <img src="" alt="">
-            <div class="itemInfo">
-              <p class="itemName">混坚果淡口味盒装 芥末味/海苔味</p>
-              <p class="itemTaste">口味规格：酥脆海苔味*2</p>
-            </div>
-            <div class="itemTotal">
-              <p>¥ 60</p>
-              <p>x 1</p>
-            </div>
-          </li> -->
         </ul>
         <div class="transfer">
           <span>配送方式</span>
@@ -60,7 +49,7 @@
           <span>如需备注请输入</span>
         </div>
         <div class="total">
-          共<span class="count">{{count}}</span>件商品,小计 <p class="totalPrice"> ¥ {{total}}</p>
+          共 <span class="count"> {{count}} </span> 件商品,小计 <p class="totalPrice"> ¥ {{total}}</p>
         </div>
       </div>
     </div>
@@ -93,7 +82,7 @@ export default {
     },
     handlePayClick(){
       Toast.success('支付成功');
-      // this.$router.push("/order")
+      this.$router.push('/order')
     }
   }
 }

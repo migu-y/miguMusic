@@ -104,7 +104,7 @@ export default {
     }
   },
   mounted(){
-    console.log(this.$store.state.cart.items)
+    // console.log(this.$store.state.cart.items)
   }
 }
 </script>
@@ -181,7 +181,7 @@ export default {
                         flex 1
                         height 1.4rem
                         flex-direction column
-                        padding-left 0.2rem
+                        padding-left 0.1rem
                         border_1px(0 0 1px 0)
                         .nameDesc 
                             font-size 0.14rem

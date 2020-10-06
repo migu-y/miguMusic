@@ -30,7 +30,7 @@ Vue.use(Tabs);
 export default {
 data() {
     return {
-      active: 2,
+      active: 1,
     };
   },
   components:{
@@ -41,6 +41,9 @@ data() {
     handleTalkClick(){
       this.$router.push("/Talk")
     }
+  },
+  mounted(){
+    console.log(this.$router.history.current.params)
   }
 }
 </script>

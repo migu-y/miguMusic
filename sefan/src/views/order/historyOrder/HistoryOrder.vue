@@ -1,8 +1,8 @@
 <template>
     <div class="history">
-        <van-tabs type="card">
+        <van-tabs type="card" v-model="active">
             <van-tab title="门店订单">没有门店</van-tab>
-            <van-tab title="百货订单">内容 2</van-tab>
+            <van-tab title="百货订单"><VarietyOrder></VarietyOrder> </van-tab>
             <van-tab title="批量开票">没有门店咋开票</van-tab>
         </van-tabs>
     </div>
@@ -11,17 +11,17 @@
 <script>
 import Vue from 'vue';
 import { Tab, Tabs } from 'vant';
-
+import VarietyOrder from "@v/order/historyOrder/VarietyOrder"
 Vue.use(Tab);
 Vue.use(Tabs);
 export default {
 data() {
     return {
-      active: 2,
+      active: 1,
     };
   },
   components:{
-   
+   VarietyOrder
   }
 }
 </script>

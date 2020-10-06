@@ -23,16 +23,21 @@ const getters = {
         }, 0)
     },
     allChecked(state) {
-        return state.items.every(value => {
-            return value.checked == true
-        })
+        if (state.items.length === 0) {
+            return false;
+        } else {
+            return state.items.every(value => {
+                return value.checked == true
+            })
+        }
+
     }
 }
 
 const mutations = {
     setItems(state, product) {
-        let { id, thumbnail, name, salePrice } = product
-        let p = state.items.find(value => value.id === id)
+        let { id, thumbnail, name, salePrice, value } = product
+        let p = state.items.find(val => val.id === id)
         if (p) {
             p.quantity++
         } else {
@@ -41,7 +46,7 @@ const mutations = {
                 thumbnail,
                 name,
                 salePrice,
-                quantity: 1,
+                quantity: value,
                 checked: false
             })
         }

@@ -14,9 +14,11 @@
       </ul>
       <div>
           <ul class="filter">
-            <li>综合</li>
-            <li>销量</li>
-            <li>价格</li>
+            <van-tabs v-model="active" @click="toggleClass">
+              <van-tab title="综合"></van-tab>
+              <van-tab title="销量"></van-tab>
+              <van-tab title="价格"></van-tab>
+            </van-tabs>
           </ul>
           <div class="toggle"><i class="iconfont icon-list"></i></div>
       </div>
@@ -38,15 +40,19 @@ import GoodsItem from "@c/GoodsItem.vue";
 import ShopBag from "@c/ShopBag"
 
 import Vue from 'vue';
-import { Popup,Cell } from 'vant';
+import { Popup,Cell,Tab, Tabs } from 'vant';
+import _ from 'lodash'
 
+Vue.use(Tab);
+Vue.use(Tabs);
 Vue.use(Popup);
 Vue.use(Cell);
 export default {
   data(){
         return {
             goodsList:[],
-            show:false
+            show:false,
+            active: 0,
         }
     },
     async mounted(){
@@ -56,6 +62,9 @@ export default {
   components: {
     GoodsItem,
     ShopBag
+  },
+  computed:{
+
   },
   methods:{
       handleCityClick() {
@@ -70,6 +79,15 @@ export default {
           params:goods
         })
     },
+    toggleClass(event){
+      if(event == 1 && this.goodsList.length>0){
+        this.goodsList = _.orderBy(this.goodsList,["wxItem.itemSalesVolume"])
+      }else if(event == 2 && this.goodsList.length>0){
+        this.goodsList = _.orderBy(this.goodsList,["wxItem.salePrice"])
+      }else if(event == 0 && this.goodsList.length>0){
+        this.goodsList = _.orderBy(this.goodsList,["wxItem.salePrice"],["desc"])
+      }
+    }
   }
 };
 </script>
@@ -154,5 +172,12 @@ export default {
 }
 .van-cell .van-icon{
   display:none
+}
+.van-tab--active {
+    color: #d3aa79;
+    font-weight: 500;
+}
+.van-tabs__line{
+  background-color: #d3aa79;
 }
 </style>
