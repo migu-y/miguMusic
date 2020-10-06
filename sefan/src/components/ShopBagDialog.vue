@@ -23,7 +23,7 @@
                 <van-stepper v-model="value" theme="round" button-size="22" disable-input />
             </span>
         </div>
-        <p class="confirm" @click="addToCart(goodsItem.wxItem);handleHiddenClick" >确定</p>
+        <p class="confirm" @click="addToCart(goodsItem.wxItem);handleHiddenClick()" >确定</p>
         
     </div>
    
