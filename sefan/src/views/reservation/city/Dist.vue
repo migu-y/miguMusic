@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul v-for='(d,index) in dist.district' :key='d.code'>
-      <router-link tag='li' to='/shop' @click="handleClick(index)">{{d.name}}</router-link>
+      <li @click="handleClick(index)">{{d.name}}</li>
     </ul>
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
     dist(){
       if(!this.data) return
       return this.data.location[0].city.find(item=>{
-        return item.city_code=this.$route.query.id
+        return item.city_code==this.$route.query.id
       })
     },
   },
@@ -25,9 +25,12 @@ export default {
       let obj={
         cout:'中国',
         city:this.dist.name,
-        dist:this.dist.district[index].name
+        city_code:this.dist.city_code,
+        dist:this.dist.district[index].name,
+        code:this.dist.district[index].code
       }
       this.change(obj)
+      this.$router.push('/shop')
     },
   },
   mounted(){

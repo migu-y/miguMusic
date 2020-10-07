@@ -16,7 +16,7 @@
           <span class="tag" v-for='t in s.shop_labels' :key='t.id'>{{t.name}}</span>
         </div>
       </div>
-      <div class="order" @click='orderClick(s.name,s.distance,s.id,$event)'>
+      <div class="order" @click='orderClick(s.name,s.distance,$event)'>
         <h2 v-if='s.is_open'>去下单</h2>
         <h2 v-else>去看看</h2>
         <p>{{(s.distance/1000).toFixed(1)+'km'}}</p>
@@ -42,7 +42,7 @@ export default {
   methods:{
     ...mapActions('mapLocation',['change']),
     ...mapActions('shopLocation',['changeShopLocation']),
-     orderClick(name,distance,id,e){
+     orderClick(name,distance,e){
       Dialog.confirm({
         title: '提示',
         message: '确定切换到选择的门店嘛',
@@ -50,8 +50,7 @@ export default {
         .then(() => {
           let shopLocation={
             name,
-            distance:(distance/1000).toFixed(1)+'km',
-            id
+            distance:(distance/1000).toFixed(1)+'km'
           }
           this.changeShopLocation(shopLocation)
           this.$router.push('/lists')

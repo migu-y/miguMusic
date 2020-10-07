@@ -89,8 +89,10 @@ export default {
       },[])
       console.log(arr);
       this.setScroll(arr)
+      //刷新
     },
     go(id){
+      console.log('1');
       if(this.scrollTop.length==0) return
       let items= document.querySelector('.items')
       let item=this.scrollTop.find(item=>{
@@ -168,4 +170,6 @@ export default {
    max-width .8rem
    text-align center
  }
+
+
 </style>

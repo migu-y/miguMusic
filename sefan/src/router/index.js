@@ -57,6 +57,7 @@ const routes = [{
             {
                 path: '/city',
                 name: 'city',
+                redirect:'/cout',
                 component: () =>
                     import ( /* webpackChunkName: "cityPicker" */ '@v/reservation/city/CityPicker'),
                 children: [{

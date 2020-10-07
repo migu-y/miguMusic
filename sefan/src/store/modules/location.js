@@ -2,7 +2,9 @@ const state={
   addr:{
     cout:'中国',
     city:'北京',
-    dist:'昌平区'
+    city_code:'156110000',
+    dist:'昌平区',
+    code:'110114'
   }
 }
 
