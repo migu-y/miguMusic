@@ -1,15 +1,10 @@
 <template>
 <div>
-  <!-- <van-swipe class="my-swipe" 
+  <van-swipe class="my-swipe" 
     :autoplay="3000" 
     >
     <van-swipe-item v-for="i in images" :key='i.id'>
       <img :src="i.url" alt="">
-    </van-swipe-item>
-  </van-swipe> -->
-  <van-swipe :autoplay="3000">
-    <van-swipe-item v-for="(image, index) in images" :key="index">
-      <img v-lazy="image" />
     </van-swipe-item>
   </van-swipe>
 </div>
@@ -26,20 +21,17 @@ Vue.use(Lazyload)
 export default {
   data(){
     return{
-      // images:[
-      //   {
-      //     url:"https://go.cdn.heytea.com/storage/ad/2020/09/20/3ede38bf901d401babdfaf8b9f891efa.jpg",
-      //     id:'01'
-      //   },
-      //   {
-      //     url:"https://go.cdn.heytea.com/storage/ad/2020/09/20/3ede38bf901d401babdfaf8b9f891efa.jpg",
-      //     id:'02'
-      //   }
-      // ]
-      images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
-      ],
+      images:[
+        {
+          url:"https://go.cdn.heytea.com/storage/ad/2020/09/20/3ede38bf901d401babdfaf8b9f891efa.jpg",
+          id:'01'
+        },
+        {
+          url:"https://go.cdn.heytea.com/storage/ad/2020/09/20/3ede38bf901d401babdfaf8b9f891efa.jpg",
+          id:'02'
+        }
+      ]
+
     }
   },
   // props:{
@@ -75,8 +67,8 @@ export default {
       width 100%
     }
   }
-  // .van-swipe__track{
-  //   display -webkit-box
-  //   height 100%
-  // }
+  .van-swipe__track{
+    display -webkit-box
+    height 100%
+  }
 </style>

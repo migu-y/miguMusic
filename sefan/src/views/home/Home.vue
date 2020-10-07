@@ -65,7 +65,7 @@ export default {
     footer
         height .5rem
         position: fixed;
-        bottom: 0;
+        bottom: -2px;
         width: 100%;
         ul
             height 100%
