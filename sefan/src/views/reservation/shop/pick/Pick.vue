@@ -2,11 +2,13 @@
 <div class="container">
   <div class="top">
     <div @click="topClick">{{addr.city}} {{addr.dist}}></div>
-    <div class="search"><i></i>搜索</div> 
   </div>
-  <div class="map">
-    <img ref='img' src="http://via.placeholder.com/375x200" alt="">
-    <div @click='tagClick'>{{tag}}</div>
+  <div class="maps">
+    <!-- <img ref='img' src="http://via.placeholder.com/375x200" alt=""> -->
+    <div ref='img' class="map">
+      <my-map ></my-map>
+    </div>
+    <div @click='tagClick' class="tag">{{tag}}</div>
   </div>
   <div class="list">
     <shop-list></shop-list>
@@ -16,8 +18,9 @@
 <script>
 import Vue from 'vue'
 import ShopList from '@c/shop-list/ShopList'
+import MyMap from '@c/Map.vue'
 
-import { mapState } from 'vuex'
+import { mapState,mapActions } from 'vuex'
 
 export default {
    data() {
@@ -30,7 +33,8 @@ export default {
   computed:{
     ...mapState('location',{
       addr:state=>state.addr
-    })
+    }),
+    
   },
   methods: {
     tagClick(){
@@ -48,7 +52,8 @@ export default {
     }
   },
   components:{
-    ShopList
+    ShopList,
+    MyMap
   }
 }
 </script>
@@ -72,8 +77,14 @@ export default {
         color #999 
       }
     }
-    .map{
-      >div{
+    .maps{
+      display flex
+      flex-direction column
+      .map{
+        width 100%
+        height 2rem
+      }
+      .tag{
         text-align center
         padding .08rem 0
       }

@@ -9,13 +9,14 @@
     </header>
     <main>
       <div class="main-top">
-        <div class="top-address" @click='handleAddress'>
+        <div class="top-address" >
           <div class="top-location">
-            <i></i>
-            <p>北京昌平永旺店</p>
+            <van-icon name="star-o" v-if='isCollect==false' @click='handleStar' />
+            <van-icon name="star" v-else @click='handleStar' color="#DBA871"/>
+            <p @click='handleAddress'>{{shopLocation.name}}</p>
             <span>></span>
           </div>
-          <p class="distance">距离您6.8km</p>
+          <p class="distance">距离您{{shopLocation.distance}}</p>
         </div>
         <van-switch 
         v-model="checked"
@@ -44,10 +45,13 @@
   import Vue from 'vue'
   import http from '@u/http'
 
-
-  import {Switch} from 'vant'
+  import {Switch,Toast} from 'vant'
+  import {mapActions, mapState} from 'vuex'
 
   Vue.use(Switch)
+  Vue.use(Toast)
+
+  let bool = false
  
   export default {
     data(){
@@ -61,12 +65,25 @@
         }
       }
     },
-    
+    computed:{
+      ...mapState('shopLocation',['shopLocation']),
+      ...mapState('shopCollect',['shopCollect']),
+      shop(){
+        return this.data.shopList.find(item=>item.id=this.shopLocation.id)
+      },
+      isCollect(){
+       let item= this.shopCollect.find(item=>item.id=this.shopLocation.id)
+       console.log(item);
+       if(item) return true
+       return false
+      }
+    },
     mounted(){
       this.loadData()
       
     },
     methods:{
+      ...mapActions('shopCollect',['addCollect','deleteCollect']),
       async loadData(){
         let result=await http.get('/items')
         // console.log(result);
@@ -83,6 +100,24 @@
       },
       handleAddress(){
         this.$router.push('/shop')
+      },
+      handleStar(){
+        this.bool=!this.bool
+        if(this.bool){
+          let obj={
+            name:this.shop.name,
+            is_open:this.shop.is_open,
+            address:this.shop.address,
+            'business_time_list[0].openAt':this.shop.business_time_list[0].openAt,
+            'business_time_list[0].closeAt':this.shop.business_time_list[0].closeAt,
+            shop_labels:this.shop.shop_labels
+          }
+          this.addCollect(obj)
+          Toast('收藏成功')
+        } else{
+          this.deleteCollect(this.shopLocation.id)
+          Toast('取消收藏成功')
+        }
       }
     },
     components:{
@@ -123,7 +158,6 @@
         .top-address{
           display flex
           flex-direction column
-          width 40%
           .top-location{
             display flex
             width 100%
