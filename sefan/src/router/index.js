@@ -106,7 +106,8 @@ const routes = [{
                 path: "profile",
                 name: "profile",
                 component: () =>
-                    import ( /*webpackChunkName:"profile"*/ '@v/profile/Profile.vue')
+                    import ( /*webpackChunkName:"profile"*/ '@v/profile/Profile.vue'),
+                children: []
             },
 
         ]
@@ -161,7 +162,42 @@ const routes = [{
         name: "factory",
         component: () =>
             import ( /*webpackChunkName:"factory"*/ '@v/variety/factory/factory.vue'),
-
+    },
+    {
+        path: "/profile/info",
+        name: "info",
+        component: () =>
+            import ( /*webpackChunkName:"info"*/ '@v/profile/info.vue'),
+    },
+    {
+        path: "/profile/moreinfo",
+        name: "moreinfo",
+        component: () =>
+            import ( /*webpackChunkName:"moreinfo"*/ '@v/profile/moreInfo.vue'),
+    },
+    {
+        path: "/profile/mession",
+        name: "mession",
+        component: () =>
+            import ( /*webpackChunkName:"mession"*/ '@v/profile/mession.vue'),
+    },
+    {
+        path: "/profile/exchange",
+        name: "exchange",
+        component: () =>
+            import ( /*webpackChunkName:"exchange"*/ '@v/profile/exchange.vue'),
+    },
+    {
+        path: "/profile/vipcode",
+        name: "vipcode",
+        component: () =>
+            import ( /*webpackChunkName:"vipcode"*/ '@v/profile/vipcode.vue'),
+    },
+    {
+        path: "/profile/information",
+        name: "information",
+        component: () =>
+            import ( /*webpackChunkName:"information"*/ '@v/profile/information.vue'),
     },
     {
         path: "/soularound",

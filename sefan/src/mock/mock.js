@@ -5,6 +5,7 @@ const list = require("./list.json")
 const shoplist = require("./shoplist.json")
 const around = require('./around.json')
 const items = require('./items.json')
+const profileCarousel = require('./profileCarousel.json')
 
 module.exports = function() {
     return {
@@ -14,6 +15,7 @@ module.exports = function() {
         list3,
         around,
         shoplist,
-        items
+        items,
+        profileCarousel
     }
 }

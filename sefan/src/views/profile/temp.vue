@@ -10,7 +10,7 @@
             <span class="BVIP">成为星球会员享双倍积分></span>
           </p>
           <p>Lv1</p>
-          <div class="avatar" @click="handleInfoClick"></div>
+          <div class="avatar"></div>
           <div class="integration">
             <img class="jifen" src="../../../public/images/1.jpg" alt="" />
             <img class="jifen" src="../../../public/images/2.jpg" alt="" />
@@ -86,15 +86,15 @@
           </van-swipe>
         </div>
       </div>
-      <div class="mession" @click="handleClickMession"></div>
+      <div class="mession"></div>
       <div class="gift"></div>
       <div class="router">
-        <van-cell title="会员码" value="门店扫码积分" size="large" is-link to="/profile/vipcode"/>
-        <van-cell title="兑换中心" value="兑换星球会员" size="large" is-link to="/profile/exchange"/>
-        <van-cell title="星球会员" size="large" is-link to="/profile/vipcode"/>
+        <van-cell title="会员码" value="门店扫码积分" size="large" is-link/>
+        <van-cell title="兑换中心" value="兑换星球会员" size="large" is-link/>
+        <van-cell title="星球会员" size="large" is-link/>
         <van-cell title="联系客服" size="large" is-link/>
-        <van-cell title="消息中心" size="large" is-link to="/profile/information"/>
-        <van-cell title="更多" size="large" is-link to="/profile/moreinfo"/>
+        <van-cell title="消息中心" size="large" is-link/>
+        <van-cell title="更多" size="large" is-link/>
       </div>
     </main>
   </div>
@@ -116,16 +116,7 @@ Vue.use(Swipe);
 Vue.use(SwipeItem);
 import mock from "../../mock/mock.js";
 var { profileCarousel } = mock();
-export default {
-  methods:{
-    handleInfoClick(){
-      this.$router.push("/profile/info")
-    },
-    handleClickMession(){
-      this.$router.push("/profile/mession")
-    }
-  }
-};
+export default {};
 </script>
  
  

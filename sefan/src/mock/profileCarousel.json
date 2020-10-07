@@ -1,0 +1,98 @@
+{
+	"code": 0,
+	"message": "success",
+	"requestId": null,
+	"data": {
+		"id": 4,
+		"name": null,
+		"playType": 1,
+		"onlineTime": "2019-12-30 21:50:59",
+		"contents": [{
+			"id": 80,
+			"postId": 75,
+			"no": "BB20200921181422",
+			"sort": 1,
+			"type": 1,
+			"contentType": 1,
+			"title": "流心奶黄波波冰",
+			"subtitle": "满载礼物回归~",
+			"coverPic": "https://go.cdn.heytea.com/storage/products/2020/09/21/92e9e217c8614ac3b257fec0dbcdbbde.jpeg",
+			"imageTextContent": null,
+			"redirectContent": {
+				"redirectType": 1,
+				"name": null,
+				"path": "https://mp.weixin.qq.com/s/tjjN6ZXXZL7MNgaJxj4ung",
+				"appId": null
+			}
+		}, {
+			"id": 78,
+			"postId": 73,
+			"no": "BB20200915173707",
+			"sort": 2,
+			"type": 1,
+			"contentType": 1,
+			"title": "椰椰新成员登场",
+			"subtitle": "椰椰脆筒&椰椰冻雪糕杯来啦",
+			"coverPic": "https://go.cdn.heytea.com/storage/products/2020/09/15/990e026a40274ab5a9242169519aa7f8.jpeg",
+			"imageTextContent": null,
+			"redirectContent": {
+				"redirectType": 1,
+				"name": null,
+				"path": "https://mp.weixin.qq.com/s/L7bE15zA9fUH8rgXL6e4Cw",
+				"appId": null
+			}
+		}, {
+			"id": 79,
+			"postId": 74,
+			"no": "BB20200915173906",
+			"sort": 3,
+			"type": 1,
+			"contentType": 1,
+			"title": "喜茶饼家中秋礼盒正式发售",
+			"subtitle": "现货礼盒最低8折购",
+			"coverPic": "https://go.cdn.heytea.com/storage/products/2020/09/15/963e94eddddc486090345e2391d430ce.png",
+			"imageTextContent": null,
+			"redirectContent": {
+				"redirectType": 1,
+				"name": null,
+				"path": "https://mp.weixin.qq.com/s/byaSy-FY_2Uoc7vzhtMywQ",
+				"appId": null
+			}
+		}, {
+			"id": 76,
+			"postId": 71,
+			"no": "BB20200909111513",
+			"sort": 4,
+			"type": 1,
+			"contentType": 1,
+			"title": "别点开，会饿的",
+			"subtitle": "多肉瓜瓜冻回归~",
+			"coverPic": "https://go.cdn.heytea.com/storage/products/2020/09/09/4975937b7d504be88d2a63a9dc8d5edf.jpeg",
+			"imageTextContent": null,
+			"redirectContent": {
+				"redirectType": 1,
+				"name": null,
+				"path": "https://mp.weixin.qq.com/s/2brysIbWmZhoIWsL3aYTSw",
+				"appId": null
+			}
+		}, {
+			"id": 50,
+			"postId": 45,
+			"no": "BB20200508143203",
+			"sort": 5,
+			"type": 1,
+			"contentType": 1,
+			"title": "喜茶星球会员升级啦",
+			"subtitle": "点击了解升级详情",
+			"coverPic": "https://go.cdn.heytea.com/storage/products/2020/05/08/0a11147144ff42629e6eca9eeec53215.png",
+			"imageTextContent": null,
+			"redirectContent": {
+				"redirectType": 0,
+				"name": null,
+				"path": "pages/member/upgrade_publicity/index",
+				"appId": null
+			}
+		}],
+		"lastUpdatedAt": "2020-10-05 16:41:09"
+	}
+}
