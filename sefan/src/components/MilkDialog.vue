@@ -62,13 +62,13 @@ export default {
         onChange(index) {
           this.current = index;
         },//id, thumbnail, name, salePrice, value
-        addTo(goodsItem,value){
+        addTo(goodsItem){
           let obj={
             id:goodsItem.id,
             thumbnail:goodsItem.images[0].url,
             name:goodsItem.name,
-            salePrice:Number(goodsItem.price),
-            value
+            salePrice:Number(goodsItem.price)*100,
+            value:goodsItem.value
           }
           this.addToCart(obj)
         }

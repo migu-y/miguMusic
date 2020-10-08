@@ -38,7 +38,7 @@
         ></router-view>
       </keep-alive>
     </main>
-    <shop-bag></shop-bag>
+    <!-- <shop-bag></shop-bag> -->
   </div>
 </template>
 

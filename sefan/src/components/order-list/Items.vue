@@ -53,9 +53,9 @@ Vue.use(Button)
 export default {
   data(){
     return{
-      a:1,
       show:false,
-      goods:{}
+      goods:{},
+      scrollT:288
     }
   },
   props:{
@@ -72,17 +72,66 @@ export default {
     items(){
       // return this.data.categories
       if(Object.keys(this.data).length===0) return
-      console.log(this.data);
       return this.data.categories
     },
+    // scrollT(){
+    //   let items= document.querySelector('.items')
+    //   if(items) return 
+    //   return items.scrollTop
+    // }
   },
   watch:{
     id(newV,oldV){
       this.go(newV)
+    },
+    scrollT(newV,oldV){
+      console.log(newV);
+      switch(newV){
+        case 288<newV<3176:
+          this.change({index:0,id:20})
+          break;
+        case 3176<newV<3889:
+          this.change({index:1,id:12})
+          break;
+        case 3889<newV<5218:
+          this.id=67
+          break;
+        case 5218<newV<6112:
+          this.id=17
+          break;
+        case 6112<newV<7441:
+          this.id=3
+          break;
+        case 7441<newV<7900:
+          this.id=1
+          break;
+        case 7900<newV<8939:
+          this.id=11
+          break;
+        case 8939<newV<9833:
+          this.id=15
+          break;
+        case 9833<newV<10854:
+          this.id=7
+          break;
+        case 10854<newV<11748:
+          this.id=6
+          break;
+        case 11748<newV<12915:
+          this.id=9
+          break;
+        case 12915<newV<13447:
+          this.id=59
+          break;
+        case 13447<newV:
+          this.id=8
+          break;
+      }
     }
   },
    methods:{
     ...mapActions('itemScroll',['setScroll']),
+    ...mapActions('category',['change']),
     Scroll(){
        if(!this.items) return
        let arr= this.items.reduce((value,item)=>{
@@ -108,7 +157,8 @@ export default {
       console.log(item);
       let top=item.st
       console.log(top);
-      items.scrollTop=top+'px'
+      items.scrollTop=top-30
+      this.scrollT=items.scrollTop
     },
     showPopup(index,products,e){
         this.show = true;

@@ -24,6 +24,7 @@
       <category :data='data'></category>
       <items :data='data'></items>
     </div>
+    <shop-bag></shop-bag>
   </div>
 </template>
 <script>
@@ -31,6 +32,7 @@ import Vue from 'vue'
 import Category from '@c/order-list/Category'
 import Items from '@c/order-list/Items'
 import { NoticeBar,Swipe,SwipeItem } from 'vant'
+import ShopBag from "@c/ShopBag"
 
  Vue.use(NoticeBar)
  Vue.use(Swipe)
@@ -43,7 +45,8 @@ export default {
   },
   components:{
     Category,
-    Items
+    Items,
+    ShopBag
   },
   mounted(){
     // console.log(this.data);
