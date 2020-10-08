@@ -75,7 +75,7 @@
       },
       isCollect(){
        let item= this.shopCollect.find(item=>item.id=this.shopLocation.id)
-       console.log(item);
+      //  console.log(item);
        if(item) return true
        return false
       }

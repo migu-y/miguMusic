@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="confirm">
-            <div class="button" color="rgb(219,168,113)" @click="addToCart(data.wxItem)">确定</div>
+            <div class="button" color="rgb(219,168,113)" @click="addToCart(data.wxItem);handleHiddenClick()">确定</div>
         </div>
     </div>
 </template>
@@ -60,7 +60,9 @@
                 this.showPrice=this.infoPrice[this.active].salePrice
             },
             ...mapActions("cart",["addToCart"]),
-            
+            handleHiddenClick(){
+                this.$emit('update:closeDialog', false)
+            },
         },
         mounted(){
             this.infoImg=this.data.skuTreeList;

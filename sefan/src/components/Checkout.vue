@@ -82,7 +82,7 @@ export default {
     },
     handlePayClick(){
       Toast.success('支付成功');
-      this.$router.push('/order')
+      this.$router.push('/order');
     }
   }
 }

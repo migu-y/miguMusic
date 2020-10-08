@@ -43,7 +43,7 @@
     </div>  
 
     <van-popup v-model="show" closeable round>
-        <AddGoods :data='info'></AddGoods>
+        <AddGoods :data='info' :closeDialog.sync="show"></AddGoods>
     </van-popup>
 
     <div class="bottom">

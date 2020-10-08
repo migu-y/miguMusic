@@ -74,6 +74,9 @@ export default {
       ...mapState('cart', {
       products: 'items'
     }),
+    // allChecked:  {
+    //     set(val) {}
+    // },
     ...mapGetters('cart', ['total',"count","allChecked"]),
   },
   methods:{
@@ -81,7 +84,7 @@ export default {
           this.show = !this.show
       },
       handleClearBag(){
-          
+          this.$store.state.cart.items = []
       },
        singleChecked(goodsItem){
         goodsItem.checked = !goodsItem.checked
@@ -100,8 +103,8 @@ export default {
           }
     },
     checkout(){
-        this.$router.push("/checkout")
-    }
+        this.$router.push("/checkout");
+    },
   },
   mounted(){
     // console.log(this.$store.state.cart.items)
