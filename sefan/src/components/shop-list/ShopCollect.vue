@@ -71,16 +71,15 @@ export default {
     }
   },
   computed:{
-    ...mapState(['data']),
+    ...mapState('shopCollect',['shopCollect']),
     shopList(){
-      console.log(1);
-      if(Object.keys(this.data).length===0) return
-      // console.log(JSON.parse(JSON.stringify(this.data)));
-      return this.data.shopList
+      console.log(this.shopCollect);
+      if(Object.keys(this.shopCollect).length===0) return
+      return this.shopCollect
     },
   },
    mounted(){
-    console.log(JSON.parse(JSON.stringify(this.data)));
+    // console.log(JSON.parse(JSON.stringify(this.data)));
   },
   
 }

@@ -8,7 +8,6 @@ import Happy from '@v/happy/Happy.vue'
 import Details from '@v/details/Details.vue'
 import Talk from "@v/order/Talk.vue"
 import SelfTake from '@v/reservation/order/SelfTake'
-import a from '@v/reservation/a'
 
 const routes = [{
         path: "/",
@@ -79,11 +78,6 @@ const routes = [{
                             import ( /* webpackChunkName: "Dist" */ '@v/reservation/city/Dist')
                     }
                 ]
-            },
-            {
-                path: '/a',
-                name: 'a',
-                component: a
             },
             {
                 path: "variety",

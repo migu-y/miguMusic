@@ -31,7 +31,7 @@
 <script>
 import Vue from 'vue';
 import { Stepper } from 'vant';
-import {mapState,mapActions} from "vuex"
+import {mapActions} from "vuex"
 Vue.use(Stepper);
 
 export default {

@@ -1,17 +1,19 @@
 <template>
   <div class='container'>
-    <shop-list></shop-list>
-    <div>-没有更多了-</div>
+    <shop-collect></shop-collect>
+    <div class="nomore">-没有更多了-</div>
   </div>
 </template>
 <script>
-import ShopList from '@c/shop-list/ShopList'
+import ShopCollect from '@c/shop-list/ShopCollect'
 export default {
   components:{
-    ShopList
+    ShopCollect
   }
 }
 </script>
 <style lang='stylus' scoped>
-
+  .nomore{
+    text-align center
+  }
 </style>

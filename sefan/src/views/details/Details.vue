@@ -189,8 +189,8 @@ export default {
 </style>
 
 <style lang="stylus">
-.van-button
-    border-radius 0
+.van-button--primary
+    border-radius .1rem
     margin-left .1rem
     width 30%
 .van-icon

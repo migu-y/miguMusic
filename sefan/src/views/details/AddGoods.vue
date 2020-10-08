@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="confirm">
-            <van-button color="rgb(219,168,113)" @click="addToCart(data.wxItem)">确定</van-button>
+            <div class="button" color="rgb(219,168,113)" @click="addToCart(data.wxItem)">确定</div>
         </div>
     </div>
 </template>
@@ -136,11 +136,15 @@
 .check
     background-color rgb(215,168,113)!important
     color #fff!important
+.button 
+    background-color rgb(215,168,113)
+    border-radius .1rem
+    height .35rem
+    line-height .35rem
+    text-align center
 </style>
 
 <style lang="stylus">
 .van-stepper__plus
     background-color rgb(219,168,113)!important
-.van-button
-    width 100%!important
 </style>
