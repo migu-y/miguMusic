@@ -1,12 +1,11 @@
 <template>
   <div class="items">
-   <!-- <swipe :data='data'></swipe> -->
-   <ae></ae>
+   <swipe :data='data'></swipe>
    <div>
     <div v-for='c in items' :key='c.id' :class="'i'+c.id">
       <h3>{{c.name}}</h3>
       <ul>
-        <li v-for='i in c.products' :key='i.id' class="goods">
+        <li v-for='(i,index) in c.products' :key='i.id' class="goods" @click="showPopup(index,c.products,$event)">
           <img :src="i.images[0].url" alt="">
           <div>
             <h2>{{i.name}}</h2>
@@ -18,45 +17,53 @@
             <p class="van-multi-ellipsis--l2">{{i.description}}</p>
             <div>
               <span>￥{{i.price}}</span>
-              <van-button v-if='a==1'
+              <van-icon name="add" color='#DBA871' size="24" />
+              <!-- <van-button v-if='a==1'
               round size="mini" color="#DBA871"
               icon="plus" type="info" />
               <van-button v-else-if='a==2'
               round size="mini"
               color="#DBA871"
-              type="info">选规格</van-button>
-              <h3 v-else>已售罄</h3>
+              type="info">选规格</van-button> -->
+              <!-- <h3 v-else>已售罄</h3> -->
             </div>
           </div>
         </li>
       </ul>
     </div>
    </div>
-   
-  </div>
+   <van-popup v-model="show"   :style="{ width: '3.2rem' }" closeable round >
+      <MilkDialog :goodsItem='goods' :closeDialog.sync="show"></MilkDialog>
+   </van-popup>
+</div>
+  
 </template>
 <script>
 import Vue from 'vue';
-import { Button } from 'vant';
+import { Button,Icon } from 'vant';
+import MilkDialog from "@c/MilkDialog"
+
 
 import { mapState,mapActions } from 'vuex'
-// import Swipe from './Swipe'
-import Ae from '@v/reservation/a'
+import Swipe from './Swipe'
 
+Vue.use(Icon);
 Vue.use(Button)
 
 export default {
   data(){
     return{
-      a:1
+      a:1,
+      show:false,
+      goods:{}
     }
   },
   props:{
     
   },
   components:{
-    // Swipe,
-    Ae
+    Swipe,
+    MilkDialog
   },
    computed:{
     ...mapState(['data']),
@@ -102,7 +109,11 @@ export default {
       let top=item.st
       console.log(top);
       items.scrollTop=top+'px'
-    }
+    },
+    showPopup(index,products,e){
+        this.show = true;
+        this.goods=products[index]
+    },
   },
   mounted(){
     // console.log(JSON.parse(JSON.stringify(this.data)));

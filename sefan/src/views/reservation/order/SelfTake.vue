@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <header>
-      <div class="header-button">
+      <!-- <div class="header-button">
         <img src="" alt="">
         <img src="" alt="">
-      </div>
+      </div> -->
       <h1>喜茶GO</h1>
     </header>
     <main>
@@ -18,10 +18,10 @@
           </div>
           <p class="distance">距离您{{shopLocation.distance}}</p>
         </div>
-        <van-switch 
+        <!-- <van-switch 
         v-model="checked"
         active-value='true'
-        />
+        /> -->
       </div>
       <div class="notice-bar">
         <router-link tag='div' 
@@ -38,12 +38,14 @@
         ></router-view>
       </keep-alive>
     </main>
+    <shop-bag></shop-bag>
   </div>
 </template>
 
 <script>
   import Vue from 'vue'
   import http from '@u/http'
+  import ShopBag from "@c/ShopBag"
 
   import {Switch,Toast} from 'vant'
   import {mapActions, mapState} from 'vuex'
@@ -108,9 +110,14 @@
             name:this.shop.name,
             is_open:this.shop.is_open,
             address:this.shop.address,
-            'business_time_list[0].openAt':this.shop.business_time_list[0].openAt,
-            'business_time_list[0].closeAt':this.shop.business_time_list[0].closeAt,
-            shop_labels:this.shop.shop_labels
+            business_time_list:[
+              {
+                openAt:this.shop.business_time_list[0].openAt,
+                closeAt:this.shop.business_time_list[0].closeAt
+              }
+            ],
+            shop_labels:this.shop.shop_labels,
+            distance:this.shop.distance
           }
           this.addCollect(obj)
           Toast('收藏成功')
@@ -121,7 +128,7 @@
       }
     },
     components:{
-
+      ShopBag
     }
   }
 </script>
