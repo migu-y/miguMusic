@@ -6,6 +6,8 @@ const shoplist = require("./shoplist.json")
 const around = require('./around.json')
 const items = require('./items.json')
 const profileCarousel = require('./profileCarousel.json')
+const listnew = require('./listnew.json')
+const listnew2 = require('./listnew2.json')
 
 module.exports = function() {
     return {
@@ -16,6 +18,8 @@ module.exports = function() {
         around,
         shoplist,
         items,
-        profileCarousel
+        profileCarousel,
+        listnew,
+        listnew2
     }
 }
