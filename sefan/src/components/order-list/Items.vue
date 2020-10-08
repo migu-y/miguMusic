@@ -1,5 +1,5 @@
 <template>
-  <div class="items">
+  <div class="items" @scroll="scrollHandler($event)">
    <swipe :data='data'></swipe>
    <div>
     <div v-for='c in items' :key='c.id' :class="'i'+c.id">
@@ -50,6 +50,7 @@ import Swipe from './Swipe'
 Vue.use(Icon);
 Vue.use(Button)
 
+let items= document.querySelector('.items')
 export default {
   data(){
     return{
@@ -70,15 +71,9 @@ export default {
     ...mapState('category',['id']),
     ...mapState('itemScroll',['scrollTop']),
     items(){
-      // return this.data.categories
       if(Object.keys(this.data).length===0) return
       return this.data.categories
     },
-    // scrollT(){
-    //   let items= document.querySelector('.items')
-    //   if(items) return 
-    //   return items.scrollTop
-    // }
   },
   watch:{
     id(newV,oldV){
@@ -86,45 +81,48 @@ export default {
     },
     scrollT(newV,oldV){
       console.log(newV);
-      switch(newV){
-        case 288<newV<3176:
+      console.log(this);
+      switch(true){
+        case  newV>288 && newV<3176:
+          console.log('huan');
           this.change({index:0,id:20})
           break;
-        case 3176<newV<3889:
+        case newV>3176 && newV<3889:
+          console.log('dong');
           this.change({index:1,id:12})
           break;
-        case 3889<newV<5218:
-          this.id=67
+        case newV>3889 && newV<5218:
+          this.change({index:2,id:67})
           break;
-        case 5218<newV<6112:
-          this.id=17
+        case newV>5218 && newV<6112:
+          this.change({index:3,id:17})
           break;
-        case 6112<newV<7441:
-          this.id=3
+        case newV>6112 && newV<7441:
+          this.change({index:4,id:3})
           break;
-        case 7441<newV<7900:
-          this.id=1
+        case newV>7441 && newV<7900:
+          this.change({index:5,id:1})
           break;
-        case 7900<newV<8939:
-          this.id=11
+        case newV>7900 && newV<8939:
+          this.change({index:6,id:11})
           break;
-        case 8939<newV<9833:
-          this.id=15
+        case newV>8939 && newV<9833:
+          this.change({index:7,id:15})
           break;
-        case 9833<newV<10854:
-          this.id=7
+        case newV>9833 && newV<10854:
+          this.change({index:8,id:7})
           break;
-        case 10854<newV<11748:
-          this.id=6
+        case newV>10854 && newV<11748:
+          this.change({index:9,id:6})
           break;
-        case 11748<newV<12915:
-          this.id=9
+        case newV>11748 && newV<12915:
+          this.change({index:10,id:9})
           break;
-        case 12915<newV<13447:
-          this.id=59
+        case newV>12915 && newV<13447:
+          this.change({index:11,id:59})
           break;
-        case 13447<newV:
-          this.id=8
+        case newV>13447:
+          this.change({index:12,id:8})
           break;
       }
     }
@@ -143,33 +141,36 @@ export default {
         value.push(obj)
         return value
       },[])
-      console.log(arr);
       this.setScroll(arr)
-      //刷新
+      let st=localStorage.getItem('scrollT')
+      console.log('1');
+      items.scrollTop=st
     },
     go(id){
-      console.log('1');
+      console.log('2');
       if(this.scrollTop.length==0) return
       let items= document.querySelector('.items')
       let item=this.scrollTop.find(item=>{
         return item.id==id
       })
-      console.log(item);
       let top=item.st
-      console.log(top);
       items.scrollTop=top-30
-      this.scrollT=items.scrollTop
+
     },
     showPopup(index,products,e){
         this.show = true;
         this.goods=products[index]
     },
+    scrollHandler(e){
+        this.scrollT=e.target.scrollTop
+        localStorage.setItem('scrollT',this.scrollT)
+    }
   },
   mounted(){
     // console.log(JSON.parse(JSON.stringify(this.data)));
     // let st= document.querySelector('.items').scrollTop
    this.Scroll()
-    
+  //  this.go(this.id)
   },
  
 }

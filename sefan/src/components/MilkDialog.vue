@@ -71,6 +71,7 @@ export default {
             value:goodsItem.value
           }
           this.addToCart(obj)
+          this.value=1
         }
     },
     mounted(){
