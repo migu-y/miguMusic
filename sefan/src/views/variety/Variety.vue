@@ -1,7 +1,7 @@
 
 <template>
   <div class="container">
-    <router-view></router-view>
+    <!-- <router-view></router-view> -->
     <header>
         喜茶百货
     </header>
@@ -49,12 +49,12 @@
             <div class="newgoods">
               <img src="../../../public/img/yuebing.png" alt="">
               <ul>
-                <li v-for="li in newlist" :key="li.id">
-                   <img :src="li.thumbnail" alt="">
+                <li v-for="goods in newlist" :key="goods.wxItem.id" @click="handleClick(goods)">
+                   <img :src="goods.wxItem.thumbnail" alt="">
                   <div class="pay">
-                    <h1>{{li.name}}</h1>
-                    <p>{{li.subName}}</p>
-                    <span>￥{{(li.labelPrice/100).toFixed(2)}}</span>
+                    <h1>{{goods.wxItem.name}}</h1>
+                    <p>{{goods.wxItem.subName}}</p>
+                    <span>￥{{(goods.wxItem.labelPrice/100).toFixed(2)}}</span>
                     <div>立即购买</div>
                   </div>
                 </li>
@@ -64,16 +64,15 @@
             <div class="newgoods">
               <img src="../../../public/img/石川.jpg" alt="">
               <ul>
-                <li>
-                 <img src="https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/7452de11abf346d49d74a958308fa9c9.jpg" alt="">
+                <li v-for="goods in newlist2" :key="goods.wxItem.id" @click="handleClick(goods)">
+                   <img :src="goods.wxItem.thumbnail" alt="">
                   <div class="pay">
-                    <h1>喜茶x石川设计 灵感茶礼盒</h1>
-                    <p>20g*4包/盒，含嫣红、绿妍、桂花绿、金凤茶王</p>
-                    <span>￥288.00</span>
+                    <h1>{{goods.wxItem.name}}</h1>
+                    <p>{{goods.wxItem.subName}}</p>
+                    <span>￥{{(goods.wxItem.labelPrice/100).toFixed(2)}}</span>
                     <div>立即购买</div>
                   </div>
                 </li>
-                
               </ul>
             </div>
             <div class="list">
@@ -81,13 +80,13 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>YOU&nbsp;&nbsp;MAY&nbsp;&nbsp; ASLO &nbsp;&nbsp;LIKE</span>
               </p>
               <ul>
-                <li v-for="n in list" :key="n.id" @click="handleClick(n)">
+                <li v-for="goods in list" :key="goods.wxItem.id" @click="handleClick(goods)">
                   
-                  <img :src="n.thumbnail" alt="">
+                  <img :src="goods.wxItem.thumbnail" alt="">
                   <div class="text">
-                    <div>{{n.name}}</div>
-                    <div>{{n.itemSalesVolume}}人已购买</div>
-                    <div>￥{{(n.labelPrice/100).toFixed(2)}}</div>
+                    <div>{{goods.wxItem.name}}</div>
+                    <div>{{goods.wxItem.itemSalesVolume }}人已购买</div>
+                    <div>￥{{(goods.wxItem.labelPrice/100).toFixed(2)}}</div>
                   </div>
                   
                   
@@ -124,34 +123,8 @@ export default {
     data(){
       return{
         active:0,
-      //    icon: {
-      //     active: 'https://img.yzcdn.cn/vant/user-active.png',
-      //     inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
-      // },
-        newlist:[
-          
-          {
-            id: 308308,
-            name: "阿喜有礼实卡中秋限定款",
-            subName: "防损贴撕开后该实体卡不支持退款哦~",
-            thumbnail: "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/54ed488dc5c44333b3e78629cd946d1c.jpg",
-            labelPrice: 10000,
-          },
-          {
-            id: 308265,
-            name: "【月饼+罐装茶九折】2020喜茶饼家中秋礼盒套装现货",
-            subName: "现货发售",
-            thumbnail:  "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/694644a81ec849ceac0bf151acf0f637.jpg",
-            labelPrice: 35300,
-          },
-          {
-            id: 308266,
-            name:"【月饼单盒】2020喜茶饼家中秋礼盒现货（单盒六只装）",
-            subName:"现货发售",
-            thumbnail: "https://prod-mall-cos-1252929494.cos.ap-guangzhou.myqcloud.com/c21d4a3842434872bca73b7bcf86b1cd.jpg",
-            labelPrice: 28800,
-          },
-        ],
+        newlist:[],
+        newlist2:[],
         list: [],
         loading: false,
         finished: false,
@@ -171,25 +144,34 @@ export default {
     methods:{
       async loadData() {
       let result = await http.get('/list'+this.page)
+      let result2=await http.get('/list'+'new')
+      let result3=await http.get('/list'+'new2')
+    
     
       this.list=[
         ...this.list,
-        ...result.data
+        ...result
         ]
-        // console.log(this.page);
+      this.newlist=[
+        ...result2
+      ]
+      this.newlist2=[
+        ...result3
+      ]
         this.loading=false
         this.page++
         
         // console.log(result.totalCount);
-         if (this.page >= Math.ceil(result.totalCount / 10+1)) {
+         if (this.page >= Math.ceil(30 / 10)) {
         this.finished = true
       }
       },
 
-      handleClick(n){
-        let {id,thumbnail,describe,subName,name,itemSalesVolume,labelPrice}=n
-         this.$store.dispatch('change', {id,thumbnail,describe,subName,name,itemSalesVolume,labelPrice})
-        this.$router.push('/Goods/Details')
+      handleClick(goods){
+        this.$router.push({
+                    name:'details',
+                    params:{info:goods}
+                })
       },
 
       
