@@ -40,6 +40,7 @@ export default {
   async mounted() {
     let result = await http.get("/list");
     this.goodsList=result.slice(0,4);
+    console.log(this.goodsList)
   },
   components: {
     GoodsIt,

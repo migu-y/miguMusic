@@ -77,6 +77,11 @@ export default {
     return {
       swipeList:[]
     }
+  },
+  methods:{
+    handleClick(){
+      
+    }
   }
 };
 </script>
