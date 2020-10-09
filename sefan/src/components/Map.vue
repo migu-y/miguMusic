@@ -2,22 +2,25 @@
   <div id="container"></div>
 </template>
 <script>
-import {mapState} from 'vuex'
+import Vue from 'vue';
+import {mapState,mapActions} from 'vuex'
+import { Dialog } from 'vant';
+
+Vue.use(Dialog)
 export default {
   computed:{
     ...mapState('mapLocation',['shopLocation']),
   },
   methods:{
+    ...mapActions('shopLocation',['changeShopLocation']),
     getMap(){
         let map = new BMapGL.Map("container")
         let point = new BMapGL.Point(this.shopLocation.x,this.shopLocation.y)
         map.centerAndZoom(point, 15)
         map.enableScrollWheelZoom(true)
         
-        let  myIcon = new BMapGL.Icon("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602153906290&di=856e4b3388346f4c15c898e3b72eb461&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171115%2Fbf61d3c9c6294b87b0d3ee0bcbd0080b.png", new BMapGL.Size(20,20));
-        let marker = new BMapGL.Marker(point,{
-          icon:myIcon
-        });  
+        // let  myIcon = new BMapGL.Icon("/public/images/timg.jpg", new BMapGL.Size(20,20));
+        let marker = new BMapGL.Marker(point);  
         map.addOverlay(marker); 
 
         let opts = {
@@ -30,6 +33,24 @@ export default {
         marker.addEventListener("click", function(){          
          map.openInfoWindow(infoWindow, point); 
         }); 
+        // map.addEventListener('click',()=>{
+        //    Dialog.confirm({
+        //   title: '提示',
+        //   message: '确定切换到选择的门店嘛',
+        // })
+        //   .then(() => {
+        //     let shopLocation={
+        //       name:this.shopLocation.name,
+        //       distance:(this.shopLocation.distance/1000).toFixed(1)+'km',
+        //       id:this.shopLocation.id
+        //     }
+        //     this.changeShopLocation(shopLocation)
+        //     this.$router.push('/lists')
+        //   })
+        //   .catch(() => {
+        //     // on cancel
+        //   })
+        // })
       }
   },
   watch:{

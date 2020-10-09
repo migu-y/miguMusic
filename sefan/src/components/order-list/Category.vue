@@ -28,7 +28,7 @@ export default {
   methods:{
     ...mapActions('category',['change']),
     handleClick(id,index,e){
-      console.log(id);
+      console.log(index,id);
       this.change({index,id})
     },
   },

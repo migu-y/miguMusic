@@ -1,6 +1,9 @@
 <template>
 <div>
-  <h2 @click='handleClick'>〈选择门店</h2>
+  <h2 @click='handleClick' >
+    <van-icon name="arrow-left" class="arrow"/>
+    <p>选择门店</p>
+  </h2>
   <van-tabs 
   v-model="active" animated
   title-active-color='#DBA871'
@@ -57,6 +60,13 @@ export default {
     // text-align center
     font-size .16rem
     font-weight bold
+    display flex
+    position relative
+    justify-content center
+    .arrow{
+      position absolute
+      left 0
+    }
   }
 </style>
 <style lang="stylus">
@@ -67,5 +77,7 @@ export default {
     font-size .14rem
     font-weight bold
   }
-
+  .van-tabs__nav--line{
+    justify-content space-evenly
+  }
 </style>
