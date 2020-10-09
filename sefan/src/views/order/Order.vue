@@ -43,7 +43,7 @@ data() {
     }
   },
   mounted(){
-    console.log(this.$router.history.current.params)
+    // console.log(this.$router.history.current.params)
   }
 }
 </script>
