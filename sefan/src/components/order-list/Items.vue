@@ -51,6 +51,7 @@ Vue.use(Icon);
 Vue.use(Button)
 
 let items= document.querySelector('.items')
+
 export default {
   data(){
     return{
@@ -79,53 +80,49 @@ export default {
     id(newV,oldV){
       this.go(newV)
     },
-    scrollT(newV,oldV){
-      console.log(newV);
-      console.log(this);
-      switch(true){
-        case  newV>288 && newV<3176:
-          console.log('huan');
-          this.change({index:0,id:20})
-          break;
-        case newV>3176 && newV<3889:
-          console.log('dong');
-          this.change({index:1,id:12})
-          break;
-        case newV>3889 && newV<5218:
-          this.change({index:2,id:67})
-          break;
-        case newV>5218 && newV<6112:
-          this.change({index:3,id:17})
-          break;
-        case newV>6112 && newV<7441:
-          this.change({index:4,id:3})
-          break;
-        case newV>7441 && newV<7900:
-          this.change({index:5,id:1})
-          break;
-        case newV>7900 && newV<8939:
-          this.change({index:6,id:11})
-          break;
-        case newV>8939 && newV<9833:
-          this.change({index:7,id:15})
-          break;
-        case newV>9833 && newV<10854:
-          this.change({index:8,id:7})
-          break;
-        case newV>10854 && newV<11748:
-          this.change({index:9,id:6})
-          break;
-        case newV>11748 && newV<12915:
-          this.change({index:10,id:9})
-          break;
-        case newV>12915 && newV<13447:
-          this.change({index:11,id:59})
-          break;
-        case newV>13447:
-          this.change({index:12,id:8})
-          break;
-      }
-    }
+    // scrollT(newV,oldV){
+    //   switch(true){
+    //     case  newV>288 && newV<3176:
+    //       this.change({index:0,id:20})
+    //       break;
+    //     case newV>3176 && newV<3889:
+    //       this.change({index:1,id:12})
+    //       break;
+    //     case newV>3889 && newV<5218:
+    //       this.change({index:2,id:67})
+    //       break;
+    //     case newV>5218 && newV<6112:
+    //       this.change({index:3,id:17})
+    //       break;
+    //     case newV>6112 && newV<7441:
+    //       this.change({index:4,id:3})
+    //       break;
+    //     case newV>7441 && newV<7900:
+    //       this.change({index:5,id:1})
+    //       break;
+    //     case newV>7900 && newV<8939:
+    //       this.change({index:6,id:11})
+    //       break;
+    //     case newV>8939 && newV<9833:
+    //       this.change({index:7,id:15})
+    //       break;
+    //     case newV>9833 && newV<10854:
+    //       this.change({index:8,id:7})
+    //       break;
+    //     case newV>10854 && newV<11748:
+    //       this.change({index:9,id:6})
+    //       break;
+    //     case newV>11748 && newV<12915:
+    //       this.change({index:10,id:9})
+    //       break;
+    //     case newV>12915 && newV<13447:
+    //       this.change({index:11,id:59})
+    //       break;
+    //     case newV>13447:
+    //       this.change({index:12,id:8})
+    //       break;
+    //   }
+    // }
   },
    methods:{
     ...mapActions('itemScroll',['setScroll']),
@@ -142,12 +139,8 @@ export default {
         return value
       },[])
       this.setScroll(arr)
-      let st=localStorage.getItem('scrollT')
-      console.log('1');
-      items.scrollTop=st
     },
     go(id){
-      console.log('2');
       if(this.scrollTop.length==0) return
       let items= document.querySelector('.items')
       let item=this.scrollTop.find(item=>{
@@ -155,7 +148,6 @@ export default {
       })
       let top=item.st
       items.scrollTop=top-30
-
     },
     showPopup(index,products,e){
         this.show = true;
@@ -163,7 +155,6 @@ export default {
     },
     scrollHandler(e){
         this.scrollT=e.target.scrollTop
-        localStorage.setItem('scrollT',this.scrollT)
     }
   },
   mounted(){

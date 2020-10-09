@@ -14,7 +14,7 @@
             <van-icon name="star-o" v-if='isCollect==false' @click='handleStar' />
             <van-icon name="star" v-else @click='handleStar' color="#DBA871"/>
             <p @click='handleAddress'>{{shopLocation.name}}</p>
-            <span>></span>
+            <van-icon name="arrow" />
           </div>
           <p class="distance">距离您{{shopLocation.distance}}</p>
         </div>
@@ -29,7 +29,8 @@
         class='more' 
         @click.native='moreClick'>
           <p>{{more.value}}</p>
-          <span>v</span>
+          <!-- <van-icon name="arrow-down" v-if='more.value="更多"'/> -->
+          <!-- <van-icon name="arrow-up" v-else/> -->
         </router-link>
       </div>
       <keep-alive>
@@ -170,6 +171,7 @@
             width 100%
             font-size .18rem
             font-weight bold
+            align-items center
           }
           .distance{
             font-size .14rem

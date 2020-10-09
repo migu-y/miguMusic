@@ -1,6 +1,8 @@
 <template>
  <div>
-   <div @click='$router.push("/shop")'>←</div>
+   <div @click='$router.push("/shop")'>
+    <van-icon name="arrow-left" />
+   </div>
    <ul class="top">
     <router-link to='/cout' tag='li' class="cout" @click.native='handleClick'>{{addr.cout}}</router-link>
     <router-link to='/citys' tag='li' class="citys" @click.native='handleClick'>{{addr.city}}</router-link>
@@ -66,6 +68,7 @@ export default {
       height 100%
       margin-right .1rem
       color #999
+      font-size .18rem
       &.active{
         color #000
         border-bottom 1px solid #000

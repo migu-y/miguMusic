@@ -10,6 +10,7 @@
     "dependencies": {
         "axios": "^0.20.0",
         "core-js": "^3.6.5",
+        "loader-runner": "^4.1.0",
         "lodash": "^4.17.20",
         "vant": "^2.10.8",
         "vue": "^2.6.11",
