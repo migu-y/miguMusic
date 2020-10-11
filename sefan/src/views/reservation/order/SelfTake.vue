@@ -72,10 +72,10 @@
       ...mapState('shopLocation',['shopLocation']),
       ...mapState('shopCollect',['shopCollect']),
       shop(){
-        return this.data.shopList.find(item=>item.id=this.shopLocation.id)
+        return this.data.shopList.find(item=>item.id==this.shopLocation.id)
       },
       isCollect(){
-       let item= this.shopCollect.find(item=>item.id=this.shopLocation.id)
+       let item= this.shopCollect.find(item=>item.id==this.shopLocation.id)
       //  console.log(item);
        if(item) return true
        return false
